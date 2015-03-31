@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D204CB521AC3626400C149BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D204CB511AC3626400C149BD /* main.m */; };
+		D204CB551AC3626400C149BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D204CB541AC3626400C149BD /* AppDelegate.m */; };
+		D204CB581AC3626400C149BD /* YourDay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D204CB561AC3626400C149BD /* YourDay.xcdatamodeld */; };
+		D204CB5E1AC3626400C149BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D204CB5C1AC3626400C149BD /* Main.storyboard */; };
+		D204CB601AC3626400C149BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D204CB5F1AC3626400C149BD /* Images.xcassets */; };
+		D204CB631AC3626400C149BD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D204CB611AC3626400C149BD /* LaunchScreen.xib */; };
+		D204CB6F1AC3626400C149BD /* YourDayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D204CB6E1AC3626400C149BD /* YourDayTests.m */; };
+		D204CB7A1AC3639800C149BD /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D204CB791AC3639800C149BD /* WeatherViewController.m */; };
+		D204CB801AC3779200C149BD /* Earth-2048h-inverted.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D204CB7C1AC3779200C149BD /* Earth-2048h-inverted.jpg */; };
+		D204CB811AC3779200C149BD /* Earth-2048h.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D204CB7D1AC3779200C149BD /* Earth-2048h.jpg */; };
+		D204CB821AC3779200C149BD /* WeatherDesign@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = D204CB7E1AC3779200C149BD /* WeatherDesign@1x.png */; };
+		D204CB831AC3779200C149BD /* WeatherDesign@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D204CB7F1AC3779200C149BD /* WeatherDesign@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D204CB691AC3626400C149BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D204CB441AC3626400C149BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D204CB4B1AC3626400C149BD;
+			remoteInfo = YourDay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D204CB4C1AC3626400C149BD /* YourDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D204CB501AC3626400C149BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D204CB511AC3626400C149BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D204CB531AC3626400C149BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D204CB541AC3626400C149BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D204CB571AC3626400C149BD /* YourDay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YourDay.xcdatamodel; sourceTree = "<group>"; };
+		D204CB5D1AC3626400C149BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D204CB5F1AC3626400C149BD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D204CB621AC3626400C149BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D204CB681AC3626400C149BD /* YourDayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YourDayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D204CB6D1AC3626400C149BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D204CB6E1AC3626400C149BD /* YourDayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YourDayTests.m; sourceTree = "<group>"; };
+		D204CB781AC3639800C149BD /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
+		D204CB791AC3639800C149BD /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
+		D204CB7C1AC3779200C149BD /* Earth-2048h-inverted.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Earth-2048h-inverted.jpg"; sourceTree = "<group>"; };
+		D204CB7D1AC3779200C149BD /* Earth-2048h.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Earth-2048h.jpg"; sourceTree = "<group>"; };
+		D204CB7E1AC3779200C149BD /* WeatherDesign@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WeatherDesign@1x.png"; sourceTree = "<group>"; };
+		D204CB7F1AC3779200C149BD /* WeatherDesign@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WeatherDesign@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D204CB491AC3626400C149BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D204CB651AC3626400C149BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D204CB431AC3626400C149BD = {
+			isa = PBXGroup;
+			children = (
+				D204CB4E1AC3626400C149BD /* YourDay */,
+				D204CB6B1AC3626400C149BD /* YourDayTests */,
+				D204CB4D1AC3626400C149BD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D204CB4D1AC3626400C149BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D204CB4C1AC3626400C149BD /* YourDay.app */,
+				D204CB681AC3626400C149BD /* YourDayTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D204CB4E1AC3626400C149BD /* YourDay */ = {
+			isa = PBXGroup;
+			children = (
+				D204CB531AC3626400C149BD /* AppDelegate.h */,
+				D204CB541AC3626400C149BD /* AppDelegate.m */,
+				D204CB781AC3639800C149BD /* WeatherViewController.h */,
+				D204CB791AC3639800C149BD /* WeatherViewController.m */,
+				D204CB5C1AC3626400C149BD /* Main.storyboard */,
+				D204CB5F1AC3626400C149BD /* Images.xcassets */,
+				D204CB611AC3626400C149BD /* LaunchScreen.xib */,
+				D204CB561AC3626400C149BD /* YourDay.xcdatamodeld */,
+				D204CB7B1AC3775A00C149BD /* Assets */,
+				D204CB4F1AC3626400C149BD /* Supporting Files */,
+			);
+			path = YourDay;
+			sourceTree = "<group>";
+		};
+		D204CB4F1AC3626400C149BD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D204CB501AC3626400C149BD /* Info.plist */,
+				D204CB511AC3626400C149BD /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D204CB6B1AC3626400C149BD /* YourDayTests */ = {
+			isa = PBXGroup;
+			children = (
+				D204CB6E1AC3626400C149BD /* YourDayTests.m */,
+				D204CB6C1AC3626400C149BD /* Supporting Files */,
+			);
+			path = YourDayTests;
+			sourceTree = "<group>";
+		};
+		D204CB6C1AC3626400C149BD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D204CB6D1AC3626400C149BD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D204CB7B1AC3775A00C149BD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D204CB7C1AC3779200C149BD /* Earth-2048h-inverted.jpg */,
+				D204CB7D1AC3779200C149BD /* Earth-2048h.jpg */,
+				D204CB7E1AC3779200C149BD /* WeatherDesign@1x.png */,
+				D204CB7F1AC3779200C149BD /* WeatherDesign@2x.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D204CB4B1AC3626400C149BD /* YourDay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D204CB721AC3626400C149BD /* Build configuration list for PBXNativeTarget "YourDay" */;
+			buildPhases = (
+				D204CB481AC3626400C149BD /* Sources */,
+				D204CB491AC3626400C149BD /* Frameworks */,
+				D204CB4A1AC3626400C149BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YourDay;
+			productName = YourDay;
+			productReference = D204CB4C1AC3626400C149BD /* YourDay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D204CB671AC3626400C149BD /* YourDayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D204CB751AC3626400C149BD /* Build configuration list for PBXNativeTarget "YourDayTests" */;
+			buildPhases = (
+				D204CB641AC3626400C149BD /* Sources */,
+				D204CB651AC3626400C149BD /* Frameworks */,
+				D204CB661AC3626400C149BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D204CB6A1AC3626400C149BD /* PBXTargetDependency */,
+			);
+			name = YourDayTests;
+			productName = YourDayTests;
+			productReference = D204CB681AC3626400C149BD /* YourDayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D204CB441AC3626400C149BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Here We Go";
+				TargetAttributes = {
+					D204CB4B1AC3626400C149BD = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					D204CB671AC3626400C149BD = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = D204CB4B1AC3626400C149BD;
+					};
+				};
+			};
+			buildConfigurationList = D204CB471AC3626400C149BD /* Build configuration list for PBXProject "YourDay" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D204CB431AC3626400C149BD;
+			productRefGroup = D204CB4D1AC3626400C149BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D204CB4B1AC3626400C149BD /* YourDay */,
+				D204CB671AC3626400C149BD /* YourDayTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D204CB4A1AC3626400C149BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D204CB801AC3779200C149BD /* Earth-2048h-inverted.jpg in Resources */,
+				D204CB811AC3779200C149BD /* Earth-2048h.jpg in Resources */,
+				D204CB5E1AC3626400C149BD /* Main.storyboard in Resources */,
+				D204CB631AC3626400C149BD /* LaunchScreen.xib in Resources */,
+				D204CB831AC3779200C149BD /* WeatherDesign@2x.png in Resources */,
+				D204CB821AC3779200C149BD /* WeatherDesign@1x.png in Resources */,
+				D204CB601AC3626400C149BD /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D204CB661AC3626400C149BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D204CB481AC3626400C149BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D204CB551AC3626400C149BD /* AppDelegate.m in Sources */,
+				D204CB521AC3626400C149BD /* main.m in Sources */,
+				D204CB7A1AC3639800C149BD /* WeatherViewController.m in Sources */,
+				D204CB581AC3626400C149BD /* YourDay.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D204CB641AC3626400C149BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D204CB6F1AC3626400C149BD /* YourDayTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D204CB6A1AC3626400C149BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D204CB4B1AC3626400C149BD /* YourDay */;
+			targetProxy = D204CB691AC3626400C149BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D204CB5C1AC3626400C149BD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D204CB5D1AC3626400C149BD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D204CB611AC3626400C149BD /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D204CB621AC3626400C149BD /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D204CB701AC3626400C149BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D204CB711AC3626400C149BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D204CB731AC3626400C149BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YourDay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D204CB741AC3626400C149BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YourDay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D204CB761AC3626400C149BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = YourDayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YourDay.app/YourDay";
+			};
+			name = Debug;
+		};
+		D204CB771AC3626400C149BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = YourDayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YourDay.app/YourDay";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D204CB471AC3626400C149BD /* Build configuration list for PBXProject "YourDay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D204CB701AC3626400C149BD /* Debug */,
+				D204CB711AC3626400C149BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D204CB721AC3626400C149BD /* Build configuration list for PBXNativeTarget "YourDay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D204CB731AC3626400C149BD /* Debug */,
+				D204CB741AC3626400C149BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D204CB751AC3626400C149BD /* Build configuration list for PBXNativeTarget "YourDayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D204CB761AC3626400C149BD /* Debug */,
+				D204CB771AC3626400C149BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D204CB561AC3626400C149BD /* YourDay.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D204CB571AC3626400C149BD /* YourDay.xcdatamodel */,
+			);
+			currentVersion = D204CB571AC3626400C149BD /* YourDay.xcdatamodel */;
+			path = YourDay.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D204CB441AC3626400C149BD /* Project object */;
+}
