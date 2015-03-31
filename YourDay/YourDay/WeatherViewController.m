@@ -35,7 +35,9 @@
 
 @property (strong, nonatomic) NSMutableArray *contentBoxes;
 @property (strong, nonatomic) NSMutableArray *labelArray;
+@property (strong, nonatomic) NSMutableArray *timeArray;
 @property (strong, nonatomic) NSArray *temperatures;
+@property (strong, nonatomic) NSArray *hours;
 
 
 @end
@@ -81,21 +83,29 @@
     //Dummy content
     self.temperatures = @[@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X"];
     
+    self.hours = @[@"12 AM", @"1 AM", @"2 AM", @"3 AM", @"4 AM", @"5 AM", @"6 AM", @"7 AM", @"8 AM", @"9 AM", @"10 AM", @"11 AM", @"12 PM", @"1 PM", @"2 PM", @"3 PM", @"4 PM", @"5 PM", @"6 PM", @"7 PM", @"8 PM", @"9 PM", @"10 PM", @"11 PM"];
+    
     self.contentBoxes = [NSMutableArray new];
+    self.timeArray = [NSMutableArray new];
     self.labelArray = [NSMutableArray new];
     for (NSInteger i = 0; i < 960; i = i+40)
     {
         UIView *hourlyContentBox = [[UIView alloc]initWithFrame:CGRectMake(i, 0, 40, 80)];
         hourlyContentBox.backgroundColor = [UIColor clearColor];
         
-        UIImageView *hourlyIconBox = [[UIImageView alloc]initWithFrame:CGRectMake(2, 2, 36, 36)];
+        UILabel *timeBox = [[UILabel alloc]initWithFrame:CGRectMake(2, 2, 36, 15)];
+        timeBox.backgroundColor = [UIColor whiteColor];
+        
+        UIImageView *hourlyIconBox = [[UIImageView alloc]initWithFrame:CGRectMake(2, 20, 36, 36)];
         hourlyIconBox.backgroundColor = [UIColor blueColor];
         
         UILabel *weatherLabelBox = [[UILabel alloc]initWithFrame:CGRectMake(2, 58, 36, 20)];
         weatherLabelBox.backgroundColor = [UIColor clearColor];
         
+        [self.timeArray addObject:timeBox];
         [self.labelArray addObject:weatherLabelBox];
         
+        [hourlyContentBox addSubview:timeBox];
         [hourlyContentBox addSubview:hourlyIconBox];
         [hourlyContentBox addSubview:weatherLabelBox];
         [self.contentBoxes addObject:hourlyContentBox];
@@ -108,18 +118,29 @@
     //E.g. "98", "98, 67", "98, 67, 100", "98, 67, 100, 77", etc. until all label have text
     for (NSInteger i=0; i<[self.temperatures count]; i++)
     {
-        UILabel *label;
+        UILabel *degreeLabel;
         
-        label = [self.labelArray objectAtIndex:i];
-        label.text = [self.temperatures objectAtIndex:i];
-        label.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:15];
-        label.textColor = [UIColor whiteColor];
-        label.textAlignment = NSTextAlignmentCenter;
+        degreeLabel = [self.labelArray objectAtIndex:i];
+        degreeLabel.text = [self.temperatures objectAtIndex:i];
+        degreeLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:15];
+        degreeLabel.textColor = [UIColor whiteColor];
+        degreeLabel.textAlignment = NSTextAlignmentCenter;
         
-        NSLog(@"object: %@", label.text);
+        NSLog(@"object: %@", degreeLabel.text);
     }
     
-    
+    for (NSInteger i=0; i<[self.timeArray count]; i++)
+    {
+        UILabel *hourLabel;
+        
+        hourLabel = [self.timeArray objectAtIndex:i];
+        hourLabel.text = [self.hours objectAtIndex:i];
+        hourLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:11];
+        hourLabel.textColor = navyFog;
+        hourLabel.textAlignment = NSTextAlignmentCenter;
+        
+        NSLog(@"Time: %@", hourLabel.text);
+    }
     
     
     
