@@ -7,9 +7,12 @@
 //
 
 #import "WeatherViewController.h"
+#import <SWRevealViewController.h>
+
 
 @interface WeatherViewController ()
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
 
 @property (weak, nonatomic) IBOutlet UIView *mainDesignContainer;
@@ -54,13 +57,27 @@
     
     self.scrollView.showsHorizontalScrollIndicator = NO;
     
-    //Make as method: "containersClearColor"
+    SWRevealViewController *revealVC = self.revealViewController;
+    if (revealVC)
+    {
+        [self.sidebarButton setTarget:self.revealViewController];
+        [self.sidebarButton setAction:@selector(revealToggle:)];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+        
+        //Places a UIView overlay on the Front View Controller to prevent user interaction when the Rear View Controller is active
+        self.revealViewController.shouldUseFrontViewOverlay = YES;
+        
+    }
+    
+    
+    
+    // TODO: Make as method- "containersClearColor"
     for (UIView *containers in [self containersArray])
     {
         containers.backgroundColor = [UIColor clearColor];
     }
     
-    //Make as method: "weatherPageBlue"
+    //TODO: Make as method- "weatherPageBlue"
     UIColor *navyFog = [UIColor colorWithRed:61.0/255 green:73.0/255 blue:96.0/255 alpha:1.0];
     
     self.currentTempLabel.textColor = navyFog;
@@ -81,7 +98,7 @@
     
     
     //Dummy content
-    self.temperatures = @[@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X"];
+    self.temperatures = @[@"67°", @"10°", @"-14°", @"104°", @"75°", @"8°", @"55°", @"93°", @"-24°", @"32°", @"100°", @"0°", @"20°", @"13°", @"60°", @"87°", @"42°", @"91°", @"2°", @"71°", @"88°", @"-7°", @"59°", @"89°"];
     
     self.hours = @[@"12 AM", @"1 AM", @"2 AM", @"3 AM", @"4 AM", @"5 AM", @"6 AM", @"7 AM", @"8 AM", @"9 AM", @"10 AM", @"11 AM", @"12 PM", @"1 PM", @"2 PM", @"3 PM", @"4 PM", @"5 PM", @"6 PM", @"7 PM", @"8 PM", @"9 PM", @"10 PM", @"11 PM"];
     
@@ -94,7 +111,7 @@
         hourlyContentBox.backgroundColor = [UIColor clearColor];
         
         UILabel *timeBox = [[UILabel alloc]initWithFrame:CGRectMake(2, 2, 36, 15)];
-        timeBox.backgroundColor = [UIColor whiteColor];
+        timeBox.backgroundColor = [UIColor clearColor];
         
         UIImageView *hourlyIconBox = [[UIImageView alloc]initWithFrame:CGRectMake(2, 20, 36, 36)];
         hourlyIconBox.backgroundColor = [UIColor blueColor];
@@ -102,13 +119,16 @@
         UILabel *weatherLabelBox = [[UILabel alloc]initWithFrame:CGRectMake(2, 58, 36, 20)];
         weatherLabelBox.backgroundColor = [UIColor clearColor];
         
-        [self.timeArray addObject:timeBox];
-        [self.labelArray addObject:weatherLabelBox];
+        
         
         [hourlyContentBox addSubview:timeBox];
         [hourlyContentBox addSubview:hourlyIconBox];
         [hourlyContentBox addSubview:weatherLabelBox];
+        
+        [self.timeArray addObject:timeBox];
+        [self.labelArray addObject:weatherLabelBox];
         [self.contentBoxes addObject:hourlyContentBox];
+        
         [self.scrollContent addSubview:hourlyContentBox];
         
     }
@@ -126,6 +146,7 @@
         degreeLabel.textColor = [UIColor whiteColor];
         degreeLabel.textAlignment = NSTextAlignmentCenter;
         
+        //TODO: Remove this NSLog
         NSLog(@"object: %@", degreeLabel.text);
     }
     
@@ -136,9 +157,10 @@
         hourLabel = [self.timeArray objectAtIndex:i];
         hourLabel.text = [self.hours objectAtIndex:i];
         hourLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:11];
-        hourLabel.textColor = navyFog;
+        hourLabel.textColor = [UIColor whiteColor];
         hourLabel.textAlignment = NSTextAlignmentCenter;
         
+        //TODO: Remove this NSLog
         NSLog(@"Time: %@", hourLabel.text);
     }
     

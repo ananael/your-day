@@ -1,0 +1,53 @@
+//
+//  TodoListViewController.m
+//  YourDay
+//
+//  Created by Michael Hoffman on 4/5/15.
+//  Copyright (c) 2015 Here We Go. All rights reserved.
+//
+
+#import "TodoListViewController.h"
+#import <SWRevealViewController.h>
+
+
+@interface TodoListViewController ()
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+
+
+@end
+
+@implementation TodoListViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    SWRevealViewController *revealVC = self.revealViewController;
+    if (revealVC)
+    {
+        [self.sidebarButton setTarget:self.revealViewController];
+        [self.sidebarButton setAction:@selector(revealToggle:)];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+        
+    }
+    
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

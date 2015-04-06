@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D20444671AD2037D007487AF /* WeeklyWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20444661AD2037D007487AF /* WeeklyWeatherViewController.m */; };
+		D204446D1AD20ECD007487AF /* RevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D204446C1AD20ECD007487AF /* RevealViewController.m */; };
+		D20444701AD20F07007487AF /* SideBarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D204446F1AD20F07007487AF /* SideBarTableViewController.m */; };
+		D20444731AD2259F007487AF /* TodoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20444721AD2259F007487AF /* TodoListViewController.m */; };
+		D20444761AD22819007487AF /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20444751AD22819007487AF /* AddItemViewController.m */; };
+		D20444791AD2282B007487AF /* DetailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D20444781AD2282B007487AF /* DetailListViewController.m */; };
+		D204447F1AD23B3D007487AF /* LeftRevealButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D204447E1AD23B3D007487AF /* LeftRevealButton.png */; };
 		D204CB521AC3626400C149BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D204CB511AC3626400C149BD /* main.m */; };
 		D204CB551AC3626400C149BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D204CB541AC3626400C149BD /* AppDelegate.m */; };
 		D204CB581AC3626400C149BD /* YourDay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D204CB561AC3626400C149BD /* YourDay.xcdatamodeld */; };
@@ -19,6 +26,7 @@
 		D204CB811AC3779200C149BD /* Earth-2048h.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D204CB7D1AC3779200C149BD /* Earth-2048h.jpg */; };
 		D204CB821AC3779200C149BD /* WeatherDesign@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = D204CB7E1AC3779200C149BD /* WeatherDesign@1x.png */; };
 		D204CB831AC3779200C149BD /* WeatherDesign@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D204CB7F1AC3779200C149BD /* WeatherDesign@2x.png */; };
+		F13B69044E46DCF1959C2738 /* libPods-YourDay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF4D7F902519C7BC33BF619 /* libPods-YourDay.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +40,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3BF4D7F902519C7BC33BF619 /* libPods-YourDay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YourDay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		54608A9B7320009283D7181C /* Pods-YourDay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourDay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YourDay/Pods-YourDay.debug.xcconfig"; sourceTree = "<group>"; };
+		7C7BBA7DF1258C521DEE5AF9 /* Pods-YourDay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourDay.release.xcconfig"; path = "Pods/Target Support Files/Pods-YourDay/Pods-YourDay.release.xcconfig"; sourceTree = "<group>"; };
+		D20444651AD2037D007487AF /* WeeklyWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeeklyWeatherViewController.h; sourceTree = "<group>"; };
+		D20444661AD2037D007487AF /* WeeklyWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeeklyWeatherViewController.m; sourceTree = "<group>"; };
+		D204446B1AD20ECD007487AF /* RevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RevealViewController.h; sourceTree = "<group>"; };
+		D204446C1AD20ECD007487AF /* RevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RevealViewController.m; sourceTree = "<group>"; };
+		D204446E1AD20F07007487AF /* SideBarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBarTableViewController.h; sourceTree = "<group>"; };
+		D204446F1AD20F07007487AF /* SideBarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideBarTableViewController.m; sourceTree = "<group>"; };
+		D20444711AD2259F007487AF /* TodoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoListViewController.h; sourceTree = "<group>"; };
+		D20444721AD2259F007487AF /* TodoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoListViewController.m; sourceTree = "<group>"; };
+		D20444741AD22819007487AF /* AddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemViewController.h; sourceTree = "<group>"; };
+		D20444751AD22819007487AF /* AddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemViewController.m; sourceTree = "<group>"; };
+		D20444771AD2282B007487AF /* DetailListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailListViewController.h; sourceTree = "<group>"; };
+		D20444781AD2282B007487AF /* DetailListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailListViewController.m; sourceTree = "<group>"; };
+		D204447E1AD23B3D007487AF /* LeftRevealButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftRevealButton.png; sourceTree = "<group>"; };
 		D204CB4C1AC3626400C149BD /* YourDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D204CB501AC3626400C149BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D204CB511AC3626400C149BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -57,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F13B69044E46DCF1959C2738 /* libPods-YourDay.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +101,8 @@
 				D204CB4E1AC3626400C149BD /* YourDay */,
 				D204CB6B1AC3626400C149BD /* YourDayTests */,
 				D204CB4D1AC3626400C149BD /* Products */,
+				E4F6E6EAFDB8F40FA406D1A4 /* Pods */,
+				D4884816C57553679A12740B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,8 +120,20 @@
 			children = (
 				D204CB531AC3626400C149BD /* AppDelegate.h */,
 				D204CB541AC3626400C149BD /* AppDelegate.m */,
+				D204446B1AD20ECD007487AF /* RevealViewController.h */,
+				D204446C1AD20ECD007487AF /* RevealViewController.m */,
+				D204446E1AD20F07007487AF /* SideBarTableViewController.h */,
+				D204446F1AD20F07007487AF /* SideBarTableViewController.m */,
 				D204CB781AC3639800C149BD /* WeatherViewController.h */,
 				D204CB791AC3639800C149BD /* WeatherViewController.m */,
+				D20444651AD2037D007487AF /* WeeklyWeatherViewController.h */,
+				D20444661AD2037D007487AF /* WeeklyWeatherViewController.m */,
+				D20444711AD2259F007487AF /* TodoListViewController.h */,
+				D20444721AD2259F007487AF /* TodoListViewController.m */,
+				D20444741AD22819007487AF /* AddItemViewController.h */,
+				D20444751AD22819007487AF /* AddItemViewController.m */,
+				D20444771AD2282B007487AF /* DetailListViewController.h */,
+				D20444781AD2282B007487AF /* DetailListViewController.m */,
 				D204CB5C1AC3626400C149BD /* Main.storyboard */,
 				D204CB5F1AC3626400C149BD /* Images.xcassets */,
 				D204CB611AC3626400C149BD /* LaunchScreen.xib */,
@@ -136,10 +175,28 @@
 			children = (
 				D204CB7C1AC3779200C149BD /* Earth-2048h-inverted.jpg */,
 				D204CB7D1AC3779200C149BD /* Earth-2048h.jpg */,
+				D204447E1AD23B3D007487AF /* LeftRevealButton.png */,
 				D204CB7E1AC3779200C149BD /* WeatherDesign@1x.png */,
 				D204CB7F1AC3779200C149BD /* WeatherDesign@2x.png */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		D4884816C57553679A12740B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BF4D7F902519C7BC33BF619 /* libPods-YourDay.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4F6E6EAFDB8F40FA406D1A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				54608A9B7320009283D7181C /* Pods-YourDay.debug.xcconfig */,
+				7C7BBA7DF1258C521DEE5AF9 /* Pods-YourDay.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,9 +206,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D204CB721AC3626400C149BD /* Build configuration list for PBXNativeTarget "YourDay" */;
 			buildPhases = (
+				85D389637E6F7E64D599E226 /* Check Pods Manifest.lock */,
 				D204CB481AC3626400C149BD /* Sources */,
 				D204CB491AC3626400C149BD /* Frameworks */,
 				D204CB4A1AC3626400C149BD /* Resources */,
+				1B905CDEF6CBA500682F1C5F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -227,6 +286,7 @@
 				D204CB5E1AC3626400C149BD /* Main.storyboard in Resources */,
 				D204CB631AC3626400C149BD /* LaunchScreen.xib in Resources */,
 				D204CB831AC3779200C149BD /* WeatherDesign@2x.png in Resources */,
+				D204447F1AD23B3D007487AF /* LeftRevealButton.png in Resources */,
 				D204CB821AC3779200C149BD /* WeatherDesign@1x.png in Resources */,
 				D204CB601AC3626400C149BD /* Images.xcassets in Resources */,
 			);
@@ -241,15 +301,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B905CDEF6CBA500682F1C5F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YourDay/Pods-YourDay-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85D389637E6F7E64D599E226 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D204CB481AC3626400C149BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D204CB551AC3626400C149BD /* AppDelegate.m in Sources */,
+				D204446D1AD20ECD007487AF /* RevealViewController.m in Sources */,
 				D204CB521AC3626400C149BD /* main.m in Sources */,
 				D204CB7A1AC3639800C149BD /* WeatherViewController.m in Sources */,
+				D20444761AD22819007487AF /* AddItemViewController.m in Sources */,
+				D20444731AD2259F007487AF /* TodoListViewController.m in Sources */,
+				D20444701AD20F07007487AF /* SideBarTableViewController.m in Sources */,
+				D20444671AD2037D007487AF /* WeeklyWeatherViewController.m in Sources */,
 				D204CB581AC3626400C149BD /* YourDay.xcdatamodeld in Sources */,
+				D20444791AD2282B007487AF /* DetailListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +470,7 @@
 		};
 		D204CB731AC3626400C149BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54608A9B7320009283D7181C /* Pods-YourDay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YourDay/Info.plist;
@@ -381,6 +481,7 @@
 		};
 		D204CB741AC3626400C149BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C7BBA7DF1258C521DEE5AF9 /* Pods-YourDay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YourDay/Info.plist;
