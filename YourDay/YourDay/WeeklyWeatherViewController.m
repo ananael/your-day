@@ -34,6 +34,8 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    self.navigationController.navigationBar.translucent = NO;
+    
     self.backgroundImage.image = [UIImage imageNamed:@"Earth-2048h-inverted.jpg"];
     
     self.cellPrototype = [self.tableView dequeueReusableCellWithIdentifier:@"weatherCell"];

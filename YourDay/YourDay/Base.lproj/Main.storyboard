@@ -198,13 +198,13 @@
         <!--Weekly Weather View Controller-->
         <scene sceneID="xjI-H0-e1j">
             <objects>
-                <viewController id="gbT-UA-LvO" customClass="WeeklyWeatherViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="gbT-UA-LvO" customClass="WeeklyWeatherViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bjU-A8-0FA"/>
                         <viewControllerLayoutGuide type="bottom" id="meN-7q-1Jr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cnr-eo-Qhy">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eP1-aN-UOD" userLabel="backgroundImage">
@@ -390,7 +390,7 @@
                             <constraint firstItem="meN-7q-1Jr" firstAttribute="top" secondItem="eP1-aN-UOD" secondAttribute="bottom" id="FXq-tC-JRq"/>
                             <constraint firstAttribute="trailing" secondItem="DbQ-mR-pNZ" secondAttribute="trailing" id="FsJ-WQ-ZPU"/>
                             <constraint firstItem="eP1-aN-UOD" firstAttribute="top" secondItem="cnr-eo-Qhy" secondAttribute="top" id="SII-XP-n5T"/>
-                            <constraint firstItem="DbQ-mR-pNZ" firstAttribute="top" secondItem="cnr-eo-Qhy" secondAttribute="top" constant="64" id="XNH-am-h1i"/>
+                            <constraint firstItem="DbQ-mR-pNZ" firstAttribute="top" secondItem="bjU-A8-0FA" secondAttribute="bottom" id="W5o-M1-R6W"/>
                             <constraint firstAttribute="trailing" secondItem="eP1-aN-UOD" secondAttribute="trailing" id="vWK-vo-ndh"/>
                         </constraints>
                     </view>
@@ -630,6 +630,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Po-Rk-Tvi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
