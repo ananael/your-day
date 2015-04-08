@@ -26,6 +26,7 @@
 		D204CB811AC3779200C149BD /* Earth-2048h.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D204CB7D1AC3779200C149BD /* Earth-2048h.jpg */; };
 		D204CB821AC3779200C149BD /* WeatherDesign@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = D204CB7E1AC3779200C149BD /* WeatherDesign@1x.png */; };
 		D204CB831AC3779200C149BD /* WeatherDesign@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D204CB7F1AC3779200C149BD /* WeatherDesign@2x.png */; };
+		D20F07D21AD473920095504E /* WeeklyWeatherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D20F07D11AD473920095504E /* WeeklyWeatherTableViewCell.m */; };
 		F13B69044E46DCF1959C2738 /* libPods-YourDay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF4D7F902519C7BC33BF619 /* libPods-YourDay.a */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,8 @@
 		D204CB7D1AC3779200C149BD /* Earth-2048h.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Earth-2048h.jpg"; sourceTree = "<group>"; };
 		D204CB7E1AC3779200C149BD /* WeatherDesign@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WeatherDesign@1x.png"; sourceTree = "<group>"; };
 		D204CB7F1AC3779200C149BD /* WeatherDesign@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WeatherDesign@2x.png"; sourceTree = "<group>"; };
+		D20F07D01AD473920095504E /* WeeklyWeatherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeeklyWeatherTableViewCell.h; sourceTree = "<group>"; };
+		D20F07D11AD473920095504E /* WeeklyWeatherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeeklyWeatherTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 				D204CB791AC3639800C149BD /* WeatherViewController.m */,
 				D20444651AD2037D007487AF /* WeeklyWeatherViewController.h */,
 				D20444661AD2037D007487AF /* WeeklyWeatherViewController.m */,
+				D20F07D01AD473920095504E /* WeeklyWeatherTableViewCell.h */,
+				D20F07D11AD473920095504E /* WeeklyWeatherTableViewCell.m */,
 				D20444711AD2259F007487AF /* TodoListViewController.h */,
 				D20444721AD2259F007487AF /* TodoListViewController.m */,
 				D20444741AD22819007487AF /* AddItemViewController.h */,
@@ -342,6 +347,7 @@
 				D204CB551AC3626400C149BD /* AppDelegate.m in Sources */,
 				D204446D1AD20ECD007487AF /* RevealViewController.m in Sources */,
 				D204CB521AC3626400C149BD /* main.m in Sources */,
+				D20F07D21AD473920095504E /* WeeklyWeatherTableViewCell.m in Sources */,
 				D204CB7A1AC3639800C149BD /* WeatherViewController.m in Sources */,
 				D20444761AD22819007487AF /* AddItemViewController.m in Sources */,
 				D20444731AD2259F007487AF /* TodoListViewController.m in Sources */,

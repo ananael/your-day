@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Earth-2048h.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="acF-uD-JGP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="acF-uD-JGP" userLabel="backgroundImage">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lx3-CN-MuB" userLabel="mainDesignContainer">
@@ -31,7 +31,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hi: 158°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEe-E7-dP6" userLabel="hiTemp">
                                                 <rect key="frame" x="65" y="80" width="105" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -51,19 +51,19 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lo: 158°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIV-5b-880" userLabel="loTemp">
                                                 <rect key="frame" x="65" y="0.0" width="105" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="feels:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epL-wi-cOd">
                                                 <rect key="frame" x="179" y="55" width="40" height="18"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="115°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDM-c7-JBD" userLabel="feelsLikeTemp">
-                                                <rect key="frame" x="174" y="71" width="41" height="22"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="115°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDM-c7-JBD" userLabel="feelsLikeTemp">
+                                                <rect key="frame" x="176" y="71" width="41" height="22"/>
+                                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="15"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -79,12 +79,12 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="108°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joQ-zn-MM3" userLabel="currentTemp">
                                                 <rect key="frame" x="30" y="0.0" width="75" height="70"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="32"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Partly Cloudy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g54-mO-RWm" userLabel="weatherDescription">
-                                                <rect key="frame" x="125" y="0.0" width="80" height="70"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <rect key="frame" x="122" y="0.0" width="80" height="70"/>
+                                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -206,15 +206,203 @@
                     <view key="view" contentMode="scaleToFill" id="cnr-eo-Qhy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eP1-aN-UOD" userLabel="backgroundImage">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DbQ-mR-pNZ">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="536" id="P4U-gA-tn2"/>
+                                    <constraint firstAttribute="width" constant="600" id="dot-NB-gct"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="weatherCell" rowHeight="108" id="PYk-wP-od0" customClass="WeeklyWeatherTableViewCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PYk-wP-od0" id="Eja-aw-YJc">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCW-vG-Dkr" userLabel="weatherDetail">
+                                                    <rect key="frame" x="60" y="2" width="465" height="25"/>
+                                                    <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="13"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ps6-Zj-cPG" userLabel="container1">
+                                                    <rect key="frame" x="60" y="29" width="465" height="75"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="108°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQq-ec-xgl" userLabel="tempLabel">
+                                                            <rect key="frame" x="2" y="0.0" width="70" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="1we-Mt-vEz"/>
+                                                                <constraint firstAttribute="width" constant="70" id="GWL-lb-6ra"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="29"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hum: 100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWS-dh-5em" userLabel="humidityLabel">
+                                                            <rect key="frame" x="2" y="50" width="70" height="25"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="70" id="rB4-S9-Fh4"/>
+                                                                <constraint firstAttribute="height" constant="25" id="uSb-5a-WP0"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="12"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPb-4G-Tsh" userLabel="container2">
+                                                            <rect key="frame" x="75" y="0.0" width="390" height="75"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rain? 100% chance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aJ-lJ-Pg1" userLabel="precipLabel">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="390" height="25"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="25" id="X0T-2t-WTt"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="12"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wind: SSW 10 mph" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJt-yS-xbd" userLabel="windLabel">
+                                                                    <rect key="frame" x="0.0" y="25" width="390" height="25"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="25" id="WEN-sA-irz"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="12"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="visibility: 10 miles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyj-Jl-qHc" userLabel="visibilityLabel">
+                                                                    <rect key="frame" x="0.0" y="50" width="390" height="25"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="25" id="eKk-HD-uPM"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="12"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="6aJ-lJ-Pg1" firstAttribute="leading" secondItem="QPb-4G-Tsh" secondAttribute="leading" id="0Jj-M6-pm9"/>
+                                                                <constraint firstItem="Yyj-Jl-qHc" firstAttribute="leading" secondItem="QPb-4G-Tsh" secondAttribute="leading" id="0vS-tY-Itk"/>
+                                                                <constraint firstAttribute="trailing" secondItem="6aJ-lJ-Pg1" secondAttribute="trailing" id="36m-fV-iwe"/>
+                                                                <constraint firstAttribute="trailing" secondItem="bJt-yS-xbd" secondAttribute="trailing" id="94a-TM-Mho"/>
+                                                                <constraint firstItem="6aJ-lJ-Pg1" firstAttribute="top" secondItem="QPb-4G-Tsh" secondAttribute="top" id="Dgm-rD-cI2"/>
+                                                                <constraint firstItem="bJt-yS-xbd" firstAttribute="top" secondItem="6aJ-lJ-Pg1" secondAttribute="bottom" id="EJh-U3-hl2"/>
+                                                                <constraint firstItem="bJt-yS-xbd" firstAttribute="top" secondItem="6aJ-lJ-Pg1" secondAttribute="bottom" id="I3V-ln-Ywg"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Yyj-Jl-qHc" secondAttribute="trailing" id="LPr-rd-aXL"/>
+                                                                <constraint firstItem="Yyj-Jl-qHc" firstAttribute="top" secondItem="bJt-yS-xbd" secondAttribute="bottom" id="R2X-g8-irY"/>
+                                                                <constraint firstItem="bJt-yS-xbd" firstAttribute="leading" secondItem="QPb-4G-Tsh" secondAttribute="leading" id="bNb-lZ-qyT"/>
+                                                                <constraint firstAttribute="height" constant="75" id="btz-xb-Hsw"/>
+                                                                <constraint firstItem="Yyj-Jl-qHc" firstAttribute="top" secondItem="bJt-yS-xbd" secondAttribute="bottom" id="dwq-nS-V6Z"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Yyj-Jl-qHc" secondAttribute="bottom" id="sfr-wF-lXz"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="QPb-4G-Tsh" firstAttribute="top" secondItem="Ps6-Zj-cPG" secondAttribute="top" id="4s0-Kj-2ct"/>
+                                                        <constraint firstItem="QQq-ec-xgl" firstAttribute="leading" secondItem="Ps6-Zj-cPG" secondAttribute="leading" constant="2" id="HIi-U3-tmI"/>
+                                                        <constraint firstAttribute="trailing" secondItem="QPb-4G-Tsh" secondAttribute="trailing" id="Qsi-09-N8c"/>
+                                                        <constraint firstAttribute="bottom" secondItem="NWS-dh-5em" secondAttribute="bottom" id="RD0-tt-Lc9"/>
+                                                        <constraint firstItem="NWS-dh-5em" firstAttribute="leading" secondItem="Ps6-Zj-cPG" secondAttribute="leading" constant="2" id="aWh-Kc-aFl"/>
+                                                        <constraint firstAttribute="bottom" secondItem="QPb-4G-Tsh" secondAttribute="bottom" id="ewj-JI-8eL"/>
+                                                        <constraint firstAttribute="height" constant="75" id="fu9-la-ZBc"/>
+                                                        <constraint firstItem="QQq-ec-xgl" firstAttribute="top" secondItem="Ps6-Zj-cPG" secondAttribute="top" id="nSu-vV-7iS"/>
+                                                        <constraint firstItem="QPb-4G-Tsh" firstAttribute="leading" secondItem="NWS-dh-5em" secondAttribute="trailing" constant="3" id="sse-Tq-L7s"/>
+                                                        <constraint firstItem="NWS-dh-5em" firstAttribute="top" secondItem="QQq-ec-xgl" secondAttribute="bottom" id="yri-jh-ipW"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="d" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hcb-rA-Suu" userLabel="dayLabel">
+                                                    <rect key="frame" x="10" y="2" width="45" height="102"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="ZQr-tb-j7w"/>
+                                                        <constraint firstAttribute="height" constant="102" id="lUm-n7-VoW"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="21"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PQO-ZG-BlG">
+                                                    <rect key="frame" x="530" y="2" width="60" height="60"/>
+                                                    <color key="backgroundColor" red="1" green="0.99066370550000005" blue="0.36909538790000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="Pxh-Dm-Y1y"/>
+                                                        <constraint firstAttribute="width" secondItem="PQO-ZG-BlG" secondAttribute="height" multiplier="1:1" id="azZ-h0-Lho"/>
+                                                        <constraint firstAttribute="height" constant="60" id="iZM-VB-TNi"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aug 30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiM-3o-CP6">
+                                                    <rect key="frame" x="530" y="79" width="60" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="S7f-ZC-PMp"/>
+                                                        <constraint firstAttribute="height" constant="25" id="VFL-ln-TTu"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="13"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="IiM-3o-CP6" secondAttribute="trailing" constant="10" id="0qz-Ng-UHO"/>
+                                                <constraint firstItem="PQO-ZG-BlG" firstAttribute="leading" secondItem="Ps6-Zj-cPG" secondAttribute="trailing" constant="5" id="1r3-3O-UGY"/>
+                                                <constraint firstItem="IiM-3o-CP6" firstAttribute="top" secondItem="PQO-ZG-BlG" secondAttribute="bottom" constant="17" id="2Et-a4-Qt7"/>
+                                                <constraint firstItem="IiM-3o-CP6" firstAttribute="top" secondItem="PQO-ZG-BlG" secondAttribute="bottom" constant="17" id="2qb-XB-ROx"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ps6-Zj-cPG" secondAttribute="trailing" constant="75" id="4jj-Sz-WQE"/>
+                                                <constraint firstAttribute="trailing" secondItem="PQO-ZG-BlG" secondAttribute="trailing" constant="10" id="6Ps-bL-4OT"/>
+                                                <constraint firstAttribute="trailing" secondItem="YCW-vG-Dkr" secondAttribute="trailing" constant="75" id="6Su-KE-RpW"/>
+                                                <constraint firstItem="YCW-vG-Dkr" firstAttribute="leading" secondItem="Eja-aw-YJc" secondAttribute="leading" constant="60" id="CQl-jt-b4m"/>
+                                                <constraint firstItem="Ps6-Zj-cPG" firstAttribute="leading" secondItem="Eja-aw-YJc" secondAttribute="leading" constant="60" id="Esd-fp-tjx"/>
+                                                <constraint firstAttribute="bottom" secondItem="Hcb-rA-Suu" secondAttribute="bottom" constant="4" id="NTJ-Nk-J7S"/>
+                                                <constraint firstItem="PQO-ZG-BlG" firstAttribute="top" secondItem="Eja-aw-YJc" secondAttribute="top" constant="2" id="SvP-ks-3X9"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ps6-Zj-cPG" secondAttribute="bottom" constant="4" id="TWm-cB-Gad"/>
+                                                <constraint firstItem="Hcb-rA-Suu" firstAttribute="leading" secondItem="Eja-aw-YJc" secondAttribute="leading" constant="10" id="ZSo-86-VgR"/>
+                                                <constraint firstAttribute="bottom" secondItem="IiM-3o-CP6" secondAttribute="bottom" constant="4" id="Zxh-rd-3MT"/>
+                                                <constraint firstItem="YCW-vG-Dkr" firstAttribute="top" secondItem="Eja-aw-YJc" secondAttribute="top" constant="2" id="dK3-LY-FuU"/>
+                                                <constraint firstItem="Ps6-Zj-cPG" firstAttribute="top" secondItem="YCW-vG-Dkr" secondAttribute="bottom" constant="2" id="faT-rh-XtF"/>
+                                                <constraint firstItem="Ps6-Zj-cPG" firstAttribute="leading" secondItem="Hcb-rA-Suu" secondAttribute="trailing" constant="5" id="m2v-gz-G4k"/>
+                                                <constraint firstItem="IiM-3o-CP6" firstAttribute="leading" secondItem="Ps6-Zj-cPG" secondAttribute="trailing" constant="5" id="o2S-1S-qR3"/>
+                                                <constraint firstItem="Hcb-rA-Suu" firstAttribute="top" secondItem="Eja-aw-YJc" secondAttribute="top" constant="2" id="oAA-Bt-mX6"/>
+                                                <constraint firstItem="Ps6-Zj-cPG" firstAttribute="top" secondItem="YCW-vG-Dkr" secondAttribute="bottom" constant="2" id="txH-Tg-CXa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="container1" destination="Ps6-Zj-cPG" id="6km-jS-yGe"/>
+                                            <outlet property="container2" destination="QPb-4G-Tsh" id="mKM-2C-HDK"/>
+                                            <outlet property="dateLabel" destination="IiM-3o-CP6" id="tRa-09-GH7"/>
+                                            <outlet property="dayLabel" destination="Hcb-rA-Suu" id="dC7-Nn-U9z"/>
+                                            <outlet property="humidityLabel" destination="NWS-dh-5em" id="csQ-8L-NwT"/>
+                                            <outlet property="precipLabel" destination="6aJ-lJ-Pg1" id="aQF-UA-Ag7"/>
+                                            <outlet property="tempLabel" destination="QQq-ec-xgl" id="SO7-MU-hve"/>
+                                            <outlet property="visibilityLabel" destination="Yyj-Jl-qHc" id="jk1-lO-wlr"/>
+                                            <outlet property="weatherDetailLabel" destination="YCW-vG-Dkr" id="rp2-ah-Bcs"/>
+                                            <outlet property="weatherImage" destination="PQO-ZG-BlG" id="DPK-xe-SxV"/>
+                                            <outlet property="windLabel" destination="bJt-yS-xbd" id="WNa-73-9z7"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="meN-7q-1Jr" firstAttribute="top" secondItem="DbQ-mR-pNZ" secondAttribute="bottom" id="1dL-E1-a2p"/>
+                            <constraint firstItem="DbQ-mR-pNZ" firstAttribute="leading" secondItem="cnr-eo-Qhy" secondAttribute="leading" id="4T4-m6-etS"/>
+                            <constraint firstItem="eP1-aN-UOD" firstAttribute="leading" secondItem="cnr-eo-Qhy" secondAttribute="leading" id="7y6-F7-5Rf"/>
+                            <constraint firstItem="meN-7q-1Jr" firstAttribute="top" secondItem="eP1-aN-UOD" secondAttribute="bottom" id="FXq-tC-JRq"/>
+                            <constraint firstAttribute="trailing" secondItem="DbQ-mR-pNZ" secondAttribute="trailing" id="FsJ-WQ-ZPU"/>
+                            <constraint firstItem="eP1-aN-UOD" firstAttribute="top" secondItem="cnr-eo-Qhy" secondAttribute="top" id="SII-XP-n5T"/>
+                            <constraint firstItem="DbQ-mR-pNZ" firstAttribute="top" secondItem="cnr-eo-Qhy" secondAttribute="top" constant="64" id="XNH-am-h1i"/>
+                            <constraint firstAttribute="trailing" secondItem="eP1-aN-UOD" secondAttribute="trailing" id="vWK-vo-ndh"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1qr-pa-Irz">
                         <barButtonItem key="leftBarButtonItem" image="LeftRevealButton.png" id="7BM-10-OvK">
-                            <color key="tintColor" red="0.23921568630000001" green="0.28627450980000002" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backgroundImage" destination="eP1-aN-UOD" id="5I4-W4-mt9"/>
                         <outlet property="sidebarButton" destination="7BM-10-OvK" id="NBw-XM-M4f"/>
+                        <outlet property="tableView" destination="DbQ-mR-pNZ" id="0h8-9K-QMq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HAe-uu-IFO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -246,7 +434,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="2RN-g4-4z0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.65608950281818179" green="0.80207787762517491" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="title" id="R1m-L0-isu" userLabel="title">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -471,11 +660,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Earth-2048h.jpg" width="1536" height="2048"/>
         <image name="LeftRevealButton.png" width="44" height="44"/>
         <image name="WeatherDesign.png" width="403" height="403"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dF3-fx-LFP"/>
+        <segue reference="cGC-LA-qns"/>
     </inferredMetricsTieBreakers>
 </document>

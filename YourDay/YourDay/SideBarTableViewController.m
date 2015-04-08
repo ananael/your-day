@@ -62,8 +62,26 @@
     
     // Configure the cell...
     
+    //TODO: consider removing this code
+    //Set the attributes of a specific indexPath
+    
+    if (indexPath.row == 0)
+    {
+        cell.backgroundColor = [UIColor whiteColor];
+        
+    } else
+    {
+        cell.backgroundColor = [UIColor clearColor];
+    }
+    
+    //Changes the selected cell's highlight color
+    UIView *highlightCell = [UIView new];
+    [highlightCell setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.5]];
+    cell.selectedBackgroundView = highlightCell;
+    
     return cell;
 }
+
 
 
 /*

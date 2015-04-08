@@ -55,6 +55,8 @@
     [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
     self.navigationController.navigationBar.translucent = NO;
     
+    self.backgroundView.image = [UIImage imageNamed:@"Earth-2048h.jpg"];
+    
     self.scrollView.showsHorizontalScrollIndicator = NO;
     
     SWRevealViewController *revealVC = self.revealViewController;
