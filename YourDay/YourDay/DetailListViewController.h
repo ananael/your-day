@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "List.h"
 
-@interface DetailListViewController : UIViewController
+@interface DetailListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic) List *toDoList;
+@property (strong, nonatomic) NSArray *toDoItems;
 
 @end
