@@ -105,12 +105,14 @@
 }
 */
 
+//Action when "Cancel" button is tapped
 - (IBAction)cancelAddItem
 {
     [self.navigationController popViewControllerAnimated:YES];
     
 }
 
+//Action when "Save" button is tpped
 - (IBAction)saveTapped:(id)sender
 {
     List *newList = [NSEntityDescription insertNewObjectForEntityForName:@"List" inManagedObjectContext:self.store.managedObjectContext];

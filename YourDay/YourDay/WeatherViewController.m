@@ -59,6 +59,7 @@
     
     self.scrollView.showsHorizontalScrollIndicator = NO;
     
+    //Implements the slide-out view controller
     SWRevealViewController *revealVC = self.revealViewController;
     if (revealVC)
     {

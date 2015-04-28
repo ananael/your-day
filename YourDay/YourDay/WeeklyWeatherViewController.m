@@ -40,6 +40,7 @@
     
     self.cellPrototype = [self.tableView dequeueReusableCellWithIdentifier:@"weatherCell"];
     
+    //Implements the slide-out view controller
     SWRevealViewController *revealVC = self.revealViewController;
     if (revealVC)
     {
