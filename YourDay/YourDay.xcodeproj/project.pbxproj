@@ -30,6 +30,8 @@
 		D20F07D71AD809800095504E /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = D20F07D61AD809800095504E /* Task.m */; };
 		D20F07DA1AD809810095504E /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = D20F07D91AD809810095504E /* List.m */; };
 		D20F07DE1AD80A040095504E /* ListsDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D20F07DD1AD80A040095504E /* ListsDataStore.m */; };
+		D2196F8F1AEFE0DD00CD0A4A /* RSSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2196F8E1AEFE0DD00CD0A4A /* RSSDetailViewController.m */; };
+		D299D2B21AEF336D00A3393A /* RSSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D299D2B11AEF336D00A3393A /* RSSViewController.m */; };
 		F13B69044E46DCF1959C2738 /* libPods-YourDay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF4D7F902519C7BC33BF619 /* libPods-YourDay.a */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +88,10 @@
 		D20F07D91AD809810095504E /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
 		D20F07DC1AD80A040095504E /* ListsDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListsDataStore.h; sourceTree = "<group>"; };
 		D20F07DD1AD80A040095504E /* ListsDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsDataStore.m; sourceTree = "<group>"; };
+		D2196F8D1AEFE0DD00CD0A4A /* RSSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSDetailViewController.h; sourceTree = "<group>"; };
+		D2196F8E1AEFE0DD00CD0A4A /* RSSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSDetailViewController.m; sourceTree = "<group>"; };
+		D299D2B01AEF336D00A3393A /* RSSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSViewController.h; sourceTree = "<group>"; };
+		D299D2B11AEF336D00A3393A /* RSSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +210,10 @@
 				D20444751AD22819007487AF /* AddItemViewController.m */,
 				D20444771AD2282B007487AF /* DetailListViewController.h */,
 				D20444781AD2282B007487AF /* DetailListViewController.m */,
+				D299D2B01AEF336D00A3393A /* RSSViewController.h */,
+				D299D2B11AEF336D00A3393A /* RSSViewController.m */,
+				D2196F8D1AEFE0DD00CD0A4A /* RSSDetailViewController.h */,
+				D2196F8E1AEFE0DD00CD0A4A /* RSSDetailViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -396,6 +406,8 @@
 				D20444671AD2037D007487AF /* WeeklyWeatherViewController.m in Sources */,
 				D20F07DE1AD80A040095504E /* ListsDataStore.m in Sources */,
 				D204CB581AC3626400C149BD /* YourDay.xcdatamodeld in Sources */,
+				D299D2B21AEF336D00A3393A /* RSSViewController.m in Sources */,
+				D2196F8F1AEFE0DD00CD0A4A /* RSSDetailViewController.m in Sources */,
 				D20444791AD2282B007487AF /* DetailListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

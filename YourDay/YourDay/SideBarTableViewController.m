@@ -12,6 +12,7 @@
 #import "WeatherViewController.h"
 #import "WeeklyWeatherViewController.h"
 #import "TodoListViewController.h"
+#import "RSSViewController.h"
 
 
 @interface SideBarTableViewController ()
@@ -31,7 +32,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.menuItems = @[@"title", @"current", @"forecast", @"todo", @"tba1", @"tba2"];
+    self.menuItems = @[@"title", @"current", @"forecast", @"todo", @"rss", @"tba1"];
     
     
 }
@@ -150,6 +151,12 @@
         navController = segue.destinationViewController;
         TodoListViewController *todoVC = (TodoListViewController *)navController.topViewController;
         todoVC.navigationItem.title = @"To-Do Lists";
+        
+    } else if ([segue.identifier isEqualToString:@"rssPush"])
+    {
+        navController = segue.destinationViewController;
+        RSSViewController *rssVC = (RSSViewController *)navController.topViewController;
+        rssVC.navigationItem.title = @"News Feeds";
         
     }
     
