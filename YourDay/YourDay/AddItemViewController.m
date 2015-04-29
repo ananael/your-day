@@ -14,6 +14,7 @@
 @interface AddItemViewController ()
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
+@property (weak, nonatomic) IBOutlet UIView *backgroundImage;
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
 @property (weak, nonatomic) IBOutlet UIView *scrollContainer;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;

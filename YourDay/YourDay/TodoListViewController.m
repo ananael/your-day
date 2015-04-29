@@ -15,6 +15,7 @@
 
 @interface TodoListViewController ()
 
+@property (weak, nonatomic) IBOutlet UIView *backgroundImage;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) ListsDataStore *store;

@@ -14,6 +14,7 @@
 
 @interface DetailListViewController ()
 
+@property (weak, nonatomic) IBOutlet UIView *backgroundImage;
 @property (strong, nonatomic) ListsDataStore *store;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
