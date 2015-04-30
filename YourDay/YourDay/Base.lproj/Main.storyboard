@@ -225,7 +225,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCW-vG-Dkr" userLabel="weatherDetail">
                                                     <rect key="frame" x="60" y="2" width="465" height="25"/>
                                                     <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ps6-Zj-cPG" userLabel="container1">
@@ -238,7 +238,7 @@
                                                                 <constraint firstAttribute="width" constant="70" id="GWL-lb-6ra"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="29"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hum: 100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWS-dh-5em" userLabel="humidityLabel">
@@ -248,7 +248,7 @@
                                                                 <constraint firstAttribute="height" constant="25" id="uSb-5a-WP0"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="12"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPb-4G-Tsh" userLabel="container2">
@@ -260,7 +260,7 @@
                                                                         <constraint firstAttribute="height" constant="25" id="X0T-2t-WTt"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="12"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wind: SSW 10 mph" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJt-yS-xbd" userLabel="windLabel">
@@ -269,7 +269,7 @@
                                                                         <constraint firstAttribute="height" constant="25" id="WEN-sA-irz"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="12"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="visibility: 10 miles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyj-Jl-qHc" userLabel="visibilityLabel">
@@ -278,7 +278,7 @@
                                                                         <constraint firstAttribute="height" constant="25" id="eKk-HD-uPM"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="12"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -319,7 +319,7 @@
                                                         <constraint firstAttribute="height" constant="102" id="lUm-n7-VoW"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="21"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PQO-ZG-BlG">
@@ -807,14 +807,12 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sw8-tf-yvZ" userLabel="backgroundImage">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pY8-mn-dtt" userLabel="entertainmentContainer">
                                 <rect key="frame" x="0.0" y="64" width="600" height="140"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dK7-sS-JUY">
                                         <rect key="frame" x="10" y="10" width="120" height="120"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="Zta-ZV-Sey"/>
                                             <constraint firstAttribute="height" constant="120" id="pLs-yi-vep"/>
@@ -890,7 +888,7 @@
                                             <constraint firstAttribute="width" constant="30" id="FWo-va-xUY"/>
                                             <constraint firstAttribute="height" constant="120" id="T11-0w-X6Z"/>
                                         </constraints>
-                                        <state key="normal" title="c">
+                                        <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1005,7 +1003,7 @@
                                             <constraint firstAttribute="width" constant="30" id="Xj4-MF-Khb"/>
                                             <constraint firstAttribute="height" constant="120" id="m4R-85-jZC"/>
                                         </constraints>
-                                        <state key="normal" title="c">
+                                        <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1120,7 +1118,7 @@
                                             <constraint firstAttribute="height" constant="120" id="95p-BZ-gAX"/>
                                             <constraint firstAttribute="width" constant="30" id="ODV-IE-eUl"/>
                                         </constraints>
-                                        <state key="normal" title="c">
+                                        <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1235,7 +1233,7 @@
                                             <constraint firstAttribute="height" constant="120" id="Mb5-7I-wqt"/>
                                             <constraint firstAttribute="width" constant="30" id="eli-te-lia"/>
                                         </constraints>
-                                        <state key="normal" title="c">
+                                        <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1367,8 +1365,8 @@
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="580" id="OvD-gn-JJa"/>
                                             <constraint firstAttribute="height" constant="30" id="jF9-ML-f00"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>

@@ -32,6 +32,9 @@
 		D20F07DE1AD80A040095504E /* ListsDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D20F07DD1AD80A040095504E /* ListsDataStore.m */; };
 		D2196F8F1AEFE0DD00CD0A4A /* RSSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2196F8E1AEFE0DD00CD0A4A /* RSSDetailViewController.m */; };
 		D299D2B21AEF336D00A3393A /* RSSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D299D2B11AEF336D00A3393A /* RSSViewController.m */; };
+		D2FEEB231AF2782C00DE3336 /* theater masks.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FEEB221AF2782C00DE3336 /* theater masks.png */; };
+		D2FEEB281AF2954600DE3336 /* MethodsCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FEEB271AF2954600DE3336 /* MethodsCache.m */; };
+		D2FEEB2D1AF2AE2F00DE3336 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FEEB2C1AF2AE2F00DE3336 /* Constants.m */; };
 		F13B69044E46DCF1959C2738 /* libPods-YourDay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BF4D7F902519C7BC33BF619 /* libPods-YourDay.a */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +95,11 @@
 		D2196F8E1AEFE0DD00CD0A4A /* RSSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSDetailViewController.m; sourceTree = "<group>"; };
 		D299D2B01AEF336D00A3393A /* RSSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSViewController.h; sourceTree = "<group>"; };
 		D299D2B11AEF336D00A3393A /* RSSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSViewController.m; sourceTree = "<group>"; };
+		D2FEEB221AF2782C00DE3336 /* theater masks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "theater masks.png"; sourceTree = "<group>"; };
+		D2FEEB261AF2954600DE3336 /* MethodsCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MethodsCache.h; sourceTree = "<group>"; };
+		D2FEEB271AF2954600DE3336 /* MethodsCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodsCache.m; sourceTree = "<group>"; };
+		D2FEEB2B1AF2AE2F00DE3336 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		D2FEEB2C1AF2AE2F00DE3336 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,16 +147,15 @@
 				D204CB531AC3626400C149BD /* AppDelegate.h */,
 				D204CB541AC3626400C149BD /* AppDelegate.m */,
 				D20F07DB1AD809CC0095504E /* DataStore */,
+				D2FEEB251AF294D900DE3336 /* Core Data */,
+				D2FEEB2A1AF2AE0C00DE3336 /* Constants */,
+				D2FEEB241AF2948900DE3336 /* Methods Cache */,
 				D20F07D41AD8031E0095504E /* TableViewCells */,
 				D20F07D31AD8030B0095504E /* Controllers */,
 				D204CB5C1AC3626400C149BD /* Main.storyboard */,
 				D204CB5F1AC3626400C149BD /* Images.xcassets */,
 				D204CB611AC3626400C149BD /* LaunchScreen.xib */,
 				D204CB561AC3626400C149BD /* YourDay.xcdatamodeld */,
-				D20F07D81AD809810095504E /* List.h */,
-				D20F07D91AD809810095504E /* List.m */,
-				D20F07D51AD809800095504E /* Task.h */,
-				D20F07D61AD809800095504E /* Task.m */,
 				D204CB7B1AC3775A00C149BD /* Assets */,
 				D204CB4F1AC3626400C149BD /* Supporting Files */,
 			);
@@ -187,6 +194,7 @@
 				D204CB7C1AC3779200C149BD /* Earth-2048h-inverted.jpg */,
 				D204CB7D1AC3779200C149BD /* Earth-2048h.jpg */,
 				D204447E1AD23B3D007487AF /* LeftRevealButton.png */,
+				D2FEEB221AF2782C00DE3336 /* theater masks.png */,
 				D204CB7E1AC3779200C149BD /* WeatherDesign@1x.png */,
 				D204CB7F1AC3779200C149BD /* WeatherDesign@2x.png */,
 			);
@@ -234,6 +242,35 @@
 				D20F07DD1AD80A040095504E /* ListsDataStore.m */,
 			);
 			name = DataStore;
+			sourceTree = "<group>";
+		};
+		D2FEEB241AF2948900DE3336 /* Methods Cache */ = {
+			isa = PBXGroup;
+			children = (
+				D2FEEB261AF2954600DE3336 /* MethodsCache.h */,
+				D2FEEB271AF2954600DE3336 /* MethodsCache.m */,
+			);
+			name = "Methods Cache";
+			sourceTree = "<group>";
+		};
+		D2FEEB251AF294D900DE3336 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				D20F07D81AD809810095504E /* List.h */,
+				D20F07D91AD809810095504E /* List.m */,
+				D20F07D51AD809800095504E /* Task.h */,
+				D20F07D61AD809800095504E /* Task.m */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		D2FEEB2A1AF2AE0C00DE3336 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				D2FEEB2B1AF2AE2F00DE3336 /* Constants.h */,
+				D2FEEB2C1AF2AE2F00DE3336 /* Constants.m */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 		D4884816C57553679A12740B /* Frameworks */ = {
@@ -343,6 +380,7 @@
 				D204447F1AD23B3D007487AF /* LeftRevealButton.png in Resources */,
 				D204CB821AC3779200C149BD /* WeatherDesign@1x.png in Resources */,
 				D204CB601AC3626400C149BD /* Images.xcassets in Resources */,
+				D2FEEB231AF2782C00DE3336 /* theater masks.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +436,7 @@
 				D204446D1AD20ECD007487AF /* RevealViewController.m in Sources */,
 				D204CB521AC3626400C149BD /* main.m in Sources */,
 				D20F07D21AD473920095504E /* WeeklyWeatherTableViewCell.m in Sources */,
+				D2FEEB281AF2954600DE3336 /* MethodsCache.m in Sources */,
 				D20F07D71AD809800095504E /* Task.m in Sources */,
 				D204CB7A1AC3639800C149BD /* WeatherViewController.m in Sources */,
 				D20444761AD22819007487AF /* AddItemViewController.m in Sources */,
@@ -409,6 +448,7 @@
 				D299D2B21AEF336D00A3393A /* RSSViewController.m in Sources */,
 				D2196F8F1AEFE0DD00CD0A4A /* RSSDetailViewController.m in Sources */,
 				D20444791AD2282B007487AF /* DetailListViewController.m in Sources */,
+				D2FEEB2D1AF2AE2F00DE3336 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

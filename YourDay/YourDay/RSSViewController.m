@@ -9,6 +9,8 @@
 #import "RSSViewController.h"
 #import <SWRevealViewController.h>
 #import "RSSDetailViewController.h"
+#import "Constants.h"
+#import "MethodsCache.h"
 
 @interface RSSViewController ()
 
@@ -62,6 +64,8 @@
 @property (strong, nonatomic) NSMutableString *rssLink;
 @property (strong, nonatomic) NSString *element;
 
+@property (strong, nonatomic) MethodsCache *methods;
+
 - (IBAction)worldTapped:(id)sender;
 - (IBAction)technologyTapped:(id)sender;
 - (IBAction)businessTapped:(id)sender;
@@ -102,12 +106,26 @@
     
     self.navigationController.navigationBar.translucent = NO;
     
+    self.entertainmentImage.image = [UIImage imageNamed:@"theater masks"];
+    
+    self.backgroundImage.backgroundColor = [UIColor colorWithRed:167.0/255.0 green:205.0/255.0 blue:255.0/255.0 alpha:1.0];
+    
+    self.methods = [MethodsCache new];
+    
     self.worldContainer.hidden = YES;
     self.sciTechContainer.hidden = YES;
     self.businessContainer.hidden = YES;
     self.entertainmentContainer.hidden = YES;
     
-    [self.hrEntertainmentBoxOfficeButton.titleLabel setTextAlignment:NSTextAlignmentCenter];
+    [self.methods containerFillColor:[self containersArray]];
+    [self.methods buttonBorder:[self closeButtonsArray]];
+    [self.methods buttonFillColor:[self closeButtonsArray]];
+    [self.methods feedButtonCenterText:[self feedButtonsArray]];
+    
+    NSString *closeButtonText = @"close";
+    [self.methods formatCloseButton:[self closeButtonsArray] withString:closeButtonText kern:10.0 scaleHeight:1.0 scaleWidth:1.0];
+    
+    [self.methods containerBottomBorder:[self containersArray] comparedToMainView:self.view];
     
     //Implements the slide-out view controller
     SWRevealViewController *revealVC = self.revealViewController;
@@ -126,6 +144,28 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(NSArray *)closeButtonsArray
+{
+    NSArray *closeButtons = @[self.closeBusinessButton, self.closeEntertainmentButton, self.closeTechButton, self.closeWorldButton];
+    
+    return closeButtons;
+}
+
+-(NSArray *)feedButtonsArray
+{
+    NSArray *feedButtons = @[self.bbcWorldButton, self.reutersWorldButton, self.usaNewsWorldButton, self.usaTodayWorldButton, self.bbcTechButton, self.nasaSciButton, self.reutersTechButton, self.techworldButton, self.bbcBusinessButton, self.forbesBusinessButton, self.reutersBusinessButton, self.wiredBusinessButton, self.bbcEntertainmentButton, self.hrEntertainmentNewsButton, self.hrEntertainmentBoxOfficeButton, self.reutersEntertainmentButton];
+    
+    return feedButtons;
+}
+
+-(NSArray *)containersArray
+{
+    NSArray *containerArray = @[self.container1, self.container2, self.worldContainer, self.sciTechContainer, self.businessContainer, self.entertainmentContainer];
+    
+    return containerArray;
+}
+
 
 
 #pragma mark - Table view data source
@@ -209,9 +249,9 @@
     
 }
 
-- (void)showRSSFeedMenu:(UIView *)menu
+- (void)showRSSFeedMenu:(UIView *)container
 {
-    menu.hidden = NO;
+    container.hidden = NO;
     
     self.container1.hidden = YES;
 }
@@ -258,112 +298,112 @@
 
 - (IBAction)bbcWorldTapped:(id)sender
 {
-    [self LoadRSSFeedWithURLString:@"http://feeds.bbci.co.uk/news/world/rss.xml"];
+    [self LoadRSSFeedWithURLString:BBC_WORLD_URL];
     
     self.rssLabel.text = @"BBC World Headlines";
 }
 
 - (IBAction)reutersWorldTapped:(id)sender
 {
-    [self LoadRSSFeedWithURLString:@"http://feeds.reuters.com/Reuters/worldNews"];
+    [self LoadRSSFeedWithURLString:REUTERS_WORLD_URL];
     
     self.rssLabel.text = @"Reuters World Headlines";
 }
 
 - (IBAction)usaNewsWorldTapped:(id)sender
 {
-    [self LoadRSSFeedWithURLString:@"http://www.usnews.com/rss/news"];
+    [self LoadRSSFeedWithURLString:USA_NEWS_URL];
     
     self.rssLabel.text = @"USANews & World Report Headlines";
 }
 
 - (IBAction)usaTodayWorldTapped:(id)sender
 {
-    [self LoadRSSFeedWithURLString:@"http://rssfeeds.usatoday.com/usatoday-NewsTopStories"];
+    [self LoadRSSFeedWithURLString:USA_TODAY_TOP_URL];
     
     self.rssLabel.text = @"USAToday Top Stories";
 }
 
 - (IBAction)bbcTechTapped:(id)sender
 {
-    [self LoadRSSFeedWithURLString:@"http://feeds.bbci.co.uk/news/technology/rss.xml"];
+    [self LoadRSSFeedWithURLString:BBC_TECH_URL];
     
     self.rssLabel.text = @"BBC Tech News";
 }
 
 - (IBAction)nasaSciTapped:(id)sender
 {
-    [self LoadRSSFeedWithURLString:@"http://www.nasa.gov/rss/image_of_the_day.rss"];
+    [self LoadRSSFeedWithURLString:NASA_SCIENCE_URL];
     
     self.rssLabel.text = @"NASA Science News";
 }
 
 - (IBAction)reutersTechTapped:(id)sender
 {
-    [self LoadRSSFeedWithURLString:@"http://feeds.reuters.com/reuters/technologyNews"];
+    [self LoadRSSFeedWithURLString:REUTERS_TECH_URL];
     
     self.rssLabel.text = @"Reuters Tech News";
 }
 
 - (IBAction)techworldTapped:(id)sender
 {
-    [self LoadRSSFeedWithURLString:@"http://www.techworld.com/news/rss"];
+    [self LoadRSSFeedWithURLString:TECHWORLD_URL];
     
     self.rssLabel.text = @"Techworld News";
 }
 
 - (IBAction)bbcBusinessTapped:(id)sender
 {
-    [self LoadRSSFeedWithURLString:@"http://feeds.bbci.co.uk/news/business/rss.xml"];
+    [self LoadRSSFeedWithURLString:BBC_BUSINESS_URL];
     
     self.rssLabel.text = @"BBC Business News";
 }
 
 - (IBAction)forbesBusinessTapped:(id)sender
 {
-    [self LoadRSSFeedWithURLString:@"http://www.forbes.com/business/index.xml"];
+    [self LoadRSSFeedWithURLString:FORBES_BUSINESS_URL];
     
     self.rssLabel.text = @"Forbes Business News";
 }
 
 - (IBAction)reutersBusinessTapped:(id)sender
 {
-    [self LoadRSSFeedWithURLString:@"http://feeds.reuters.com/reuters/businessNews"];
+    [self LoadRSSFeedWithURLString:REUTERS_BUSINESS_URL];
     
     self.rssLabel.text = @"Reuters Business News";
 }
 
 - (IBAction)wiredBusinessTapped:(id)sender
 {
-    [self LoadRSSFeedWithURLString:@"http://www.wired.com/category/business/feed/"];
+    [self LoadRSSFeedWithURLString:WIRED_BUSINESS_URL];
     
     self.rssLabel.text = @"WIRED Business News";
 }
 
 - (IBAction)bbcEntertainmentTapped:(id)sender
 {
-    [self LoadRSSFeedWithURLString:@"http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml"];
+    [self LoadRSSFeedWithURLString:BBC_ENTERTAINMENT_URL];
     
     self.rssLabel.text = @"BBC Entertainment News";
 }
 
 - (IBAction)hrEntertainmentNewsTapped:(id)sender
 {
-    [self LoadRSSFeedWithURLString:@"http://feeds.feedburner.com/thr/news"];
+    [self LoadRSSFeedWithURLString:THR_ENTERTAINMENT_URL];
     
     self.rssLabel.text = @"Hollywood Reporter News";
 }
 
 - (IBAction)hrEntertainmentBoxOfficeTapped:(id)sender
 {
-    [self LoadRSSFeedWithURLString:@"http://feeds.feedburner.com/thr/boxoffice"];
+    [self LoadRSSFeedWithURLString:THR_BOX_OFFICE_OURL];
     
     self.rssLabel.text = @"Hollywood Reporter Box Office";
 }
 
 - (IBAction)reutersEntertainmentTapped:(id)sender
 {
-    [self LoadRSSFeedWithURLString:@"http://feeds.reuters.com/reuters/entertainment"];
+    [self LoadRSSFeedWithURLString:REUTERS_ENTERTAINMENT_URL];
     
     self.rssLabel.text = @"Reuters Entertainment News";
 }
@@ -376,6 +416,24 @@
     self.sciTechContainer.hidden = YES;
     self.businessContainer.hidden = YES;
     self.entertainmentContainer.hidden = YES;
+    
+//    NSArray *containers = @[self.worldContainer, self.sciTechContainer, self.businessContainer, self.entertainmentContainer];
+//    for (UIView *container in containers)
+//    {
+//        [UIView transitionFromView:container
+//                            toView:self.container1
+//                          duration:1.0
+//                           options:UIViewAnimationOptionTransitionCrossDissolve
+//                        completion:^(BOOL finished) {
+//                            self.container1.hidden = NO;
+//                            self.worldContainer.hidden = YES;
+//                            self.sciTechContainer.hidden = YES;
+//                            self.businessContainer.hidden = YES;
+//                            self.entertainmentContainer.hidden = YES;
+//                        }];
+//    }
+    
+    
     
 }
 
