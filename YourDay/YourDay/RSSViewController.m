@@ -106,6 +106,9 @@
     
     self.navigationController.navigationBar.translucent = NO;
     
+    self.worldImage.image = [UIImage imageNamed:@"world news"];
+    self.sciTechImage.image = [UIImage imageNamed:@"scitech"];
+    self.businessImage.image = [UIImage imageNamed:@"business"];
     self.entertainmentImage.image = [UIImage imageNamed:@"theater masks"];
     
     self.backgroundImage.backgroundColor = [UIColor colorWithRed:167.0/255.0 green:205.0/255.0 blue:255.0/255.0 alpha:1.0];

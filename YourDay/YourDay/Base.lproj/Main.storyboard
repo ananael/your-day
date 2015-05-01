@@ -927,7 +927,6 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tg3-eY-lv7">
                                         <rect key="frame" x="10" y="10" width="120" height="120"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="Web-Cn-Xzk"/>
                                             <constraint firstAttribute="width" constant="120" id="qEX-Q0-n9n"/>
@@ -1042,7 +1041,6 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IIN-BX-dUF">
                                         <rect key="frame" x="10" y="10" width="120" height="120"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="4Jv-PP-GRP"/>
                                             <constraint firstAttribute="width" constant="120" id="scb-YU-fyO"/>
@@ -1157,7 +1155,6 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dOv-eX-wfW">
                                         <rect key="frame" x="10" y="10" width="120" height="120"/>
-                                        <color key="backgroundColor" red="1" green="0.99066370550000005" blue="0.36909538790000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="ij6-1L-9S2"/>
                                             <constraint firstAttribute="height" constant="120" id="vvv-1g-ni3"/>
@@ -1356,6 +1353,25 @@
                                     <constraint firstItem="LeR-nE-7N0" firstAttribute="leading" secondItem="NuV-O0-bd7" secondAttribute="leading" constant="10" id="vAK-1F-BnU"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1eg-H9-0nq">
+                                <rect key="frame" x="10" y="244" width="580" height="346"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="580" id="fUI-7B-8Ic"/>
+                                    <constraint firstAttribute="height" constant="346" id="jkc-Ad-iYt"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="rssCell" id="g7B-oB-Eyh">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g7B-oB-Eyh" id="f6I-UF-cO9">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="scJ-4w-4gw" kind="show" identifier="rssDetailSegue" id="Lbg-tq-Pkm"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="63O-z4-up9" userLabel="container2">
                                 <rect key="frame" x="0.0" y="204" width="600" height="30"/>
                                 <subviews>
@@ -1381,25 +1397,6 @@
                                     <constraint firstAttribute="trailing" secondItem="Tfp-ta-Tm6" secondAttribute="trailing" constant="10" id="eTr-Y5-LEz"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="1eg-H9-0nq">
-                                <rect key="frame" x="10" y="234" width="580" height="356"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="580" id="fUI-7B-8Ic"/>
-                                    <constraint firstAttribute="height" constant="356" id="jkc-Ad-iYt"/>
-                                </constraints>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="rssCell" id="g7B-oB-Eyh">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g7B-oB-Eyh" id="f6I-UF-cO9">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="scJ-4w-4gw" kind="show" identifier="rssDetailSegue" id="Lbg-tq-Pkm"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1438,7 +1435,7 @@
                             <constraint firstItem="63O-z4-up9" firstAttribute="top" secondItem="YWt-kb-0dp" secondAttribute="bottom" id="o2O-M8-LLb"/>
                             <constraint firstItem="63O-z4-up9" firstAttribute="top" secondItem="VUg-sh-ScK" secondAttribute="bottom" id="q5F-QC-kDy"/>
                             <constraint firstAttribute="trailing" secondItem="sw8-tf-yvZ" secondAttribute="trailing" id="s10-RT-k3g"/>
-                            <constraint firstItem="1eg-H9-0nq" firstAttribute="top" secondItem="63O-z4-up9" secondAttribute="bottom" id="uJj-1Q-LCy"/>
+                            <constraint firstItem="1eg-H9-0nq" firstAttribute="top" secondItem="63O-z4-up9" secondAttribute="bottom" constant="10" id="uJj-1Q-LCy"/>
                             <constraint firstItem="NuV-O0-bd7" firstAttribute="top" secondItem="sK6-2Y-9ce" secondAttribute="bottom" id="yHx-fc-uZU"/>
                         </constraints>
                     </view>
