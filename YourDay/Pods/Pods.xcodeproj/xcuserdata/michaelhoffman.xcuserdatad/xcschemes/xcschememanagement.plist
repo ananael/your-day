@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-YourDay-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-YourDay-Forecastr.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-YourDay-SWRevealViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5106DD3911712E0DE1B9C4CA</key>
+		<key>9BF667D12B48991E4A6A1898</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9B6B264B8758F1CDE039F409</key>
+		<key>B8F7EE20DF3DDF7DEFA8B3F6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C8D48DF5DA48AE5FC0F35022</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DAAF05E06FEFADC7E8776EF2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
