@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Forecastr+CLLocation.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface WeatherViewController : UIViewController
+@interface WeatherViewController : UIViewController <CLLocationManagerDelegate>
+
+
 
 @end

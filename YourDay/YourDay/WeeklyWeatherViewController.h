@@ -10,4 +10,6 @@
 
 @interface WeeklyWeatherViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (strong, nonatomic) NSMutableDictionary *resultsDictionary;
+
 @end

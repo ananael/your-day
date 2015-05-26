@@ -107,6 +107,65 @@
     }
 }
 
+-(void) convertEpochTimeToHumanReadable:(NSTimeInterval)time
+{
+    NSDate *humanDate = [NSDate dateWithTimeIntervalSince1970:time];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"hh:mm a"];
+    
+    NSString *resultString = [formatter stringFromDate:humanDate];
+    
+    NSLog(@"Real Time: %@", resultString);
+}
+
+-(NSString *) convertDecimalToRoundedString:(NSNumber *)number
+{
+    CGFloat convertNumber = [number floatValue];
+    NSString *roundedString = [NSString stringWithFormat:@"%.0f",convertNumber];
+    
+    return roundedString;
+}
+
+-(NSString *) convertToTemperature:(NSNumber *)number
+{
+    NSString *convertedNumber = [self convertDecimalToRoundedString:number];
+    NSString *temperatureString = [NSString stringWithFormat:@"%@°", convertedNumber];
+    return temperatureString;
+}
+
+-(NSString *) convertEpochTimeToHumanHours:(NSNumber *)number
+{
+    NSInteger convertedNumber = [number integerValue];
+    NSTimeInterval time = convertedNumber;
+    NSDate *humanDate = [NSDate dateWithTimeIntervalSince1970:time];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"h a"];
+    
+    NSString *truncatedTime = [formatter stringFromDate:humanDate];
+    
+    return truncatedTime;
+}
+
+-(NSString *) convertToHiTemperature:(NSNumber *)number
+{
+    NSString *convertedNumber = [self convertDecimalToRoundedString:number];
+    NSString *temperatureString = [NSString stringWithFormat:@"hi: %@°", convertedNumber];
+    return temperatureString;
+}
+
+-(NSString *) convertToLoTemperature:(NSNumber *)number
+{
+    NSString *convertedNumber = [self convertDecimalToRoundedString:number];
+    NSString *temperatureString = [NSString stringWithFormat:@"lo: %@°", convertedNumber];
+    return temperatureString;
+}
+
+
+
+
+
 
 
 

@@ -35,4 +35,23 @@
              scaleHeight:(CGFloat)floatX
               scaleWidth:(CGFloat)floatY;
 
+-(void) convertEpochTimeToHumanReadable:(NSTimeInterval)time;
+-(NSString *) convertDecimalToRoundedString:(NSNumber *)number;
+-(NSString *) convertToTemperature:(NSNumber *)number;
+-(NSString *) convertEpochTimeToHumanHours:(NSNumber *)number;
+-(NSString *) convertToHiTemperature:(NSNumber *)number;
+-(NSString *) convertToLoTemperature:(NSNumber *)number;
+
+
+
+
+
+
+
+
+
+
+
+
+
 @end

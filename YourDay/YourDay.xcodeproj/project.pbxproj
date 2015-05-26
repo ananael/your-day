@@ -31,6 +31,7 @@
 		D20F07DA1AD809810095504E /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = D20F07D91AD809810095504E /* List.m */; };
 		D20F07DE1AD80A040095504E /* ListsDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D20F07DD1AD80A040095504E /* ListsDataStore.m */; };
 		D2196F8F1AEFE0DD00CD0A4A /* RSSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2196F8E1AEFE0DD00CD0A4A /* RSSDetailViewController.m */; };
+		D21FA6061B13F529002543F3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D21FA6051B13F529002543F3 /* CoreLocation.framework */; };
 		D299D2B21AEF336D00A3393A /* RSSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D299D2B11AEF336D00A3393A /* RSSViewController.m */; };
 		D2FEEB231AF2782C00DE3336 /* theater masks.png in Resources */ = {isa = PBXBuildFile; fileRef = D2FEEB221AF2782C00DE3336 /* theater masks.png */; };
 		D2FEEB281AF2954600DE3336 /* MethodsCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FEEB271AF2954600DE3336 /* MethodsCache.m */; };
@@ -96,6 +97,7 @@
 		D20F07DD1AD80A040095504E /* ListsDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsDataStore.m; sourceTree = "<group>"; };
 		D2196F8D1AEFE0DD00CD0A4A /* RSSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSDetailViewController.h; sourceTree = "<group>"; };
 		D2196F8E1AEFE0DD00CD0A4A /* RSSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSDetailViewController.m; sourceTree = "<group>"; };
+		D21FA6051B13F529002543F3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D299D2B01AEF336D00A3393A /* RSSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSViewController.h; sourceTree = "<group>"; };
 		D299D2B11AEF336D00A3393A /* RSSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSViewController.m; sourceTree = "<group>"; };
 		D2FEEB221AF2782C00DE3336 /* theater masks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "theater masks.png"; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D21FA6061B13F529002543F3 /* CoreLocation.framework in Frameworks */,
 				F13B69044E46DCF1959C2738 /* libPods-YourDay.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +288,7 @@
 		D4884816C57553679A12740B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D21FA6051B13F529002543F3 /* CoreLocation.framework */,
 				3BF4D7F902519C7BC33BF619 /* libPods-YourDay.a */,
 			);
 			name = Frameworks;

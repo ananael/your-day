@@ -8,6 +8,9 @@
 
 #import "WeatherViewController.h"
 #import <SWRevealViewController.h>
+#import "Constants.h"
+#import "MethodsCache.h"
+#import "WeeklyWeatherViewController.h"
 
 
 @interface WeatherViewController ()
@@ -37,11 +40,18 @@
 @property (weak, nonatomic) IBOutlet UIView *scrollContent;
 
 @property (strong, nonatomic) NSMutableArray *contentBoxes;
-@property (strong, nonatomic) NSMutableArray *labelArray;
+@property (strong, nonatomic) NSMutableArray *degreeArray;
 @property (strong, nonatomic) NSMutableArray *timeArray;
-@property (strong, nonatomic) NSArray *temperatures;
-@property (strong, nonatomic) NSArray *hours;
+@property (strong, nonatomic) NSMutableArray *temperatures;
+@property (strong, nonatomic) NSMutableArray *hours;
 
+@property (strong, nonatomic) Forecastr *forecastr;
+@property (strong, nonatomic) NSMutableDictionary *resultsDictionary;
+
+@property (strong, nonatomic) CLLocation *location;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+
+@property (strong, nonatomic) MethodsCache *methods;
 
 @end
 
@@ -58,6 +68,16 @@
     self.backgroundView.image = [UIImage imageNamed:@"Earth-2048h.jpg"];
     
     self.scrollView.showsHorizontalScrollIndicator = NO;
+    
+    self.methods = [MethodsCache new];
+    
+    self.locationManager = [[CLLocationManager alloc]init]; // initializing locationManager
+    self.locationManager.delegate = self; // setting the delegate of locationManager to self.
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest; // setting the accuracy
+    
+    [self.locationManager startUpdatingLocation];  //requesting location updates
+    
+    NSLog(@"View Did Load values: %@", [self deviceLocation]);
     
     //Implements the slide-out view controller
     SWRevealViewController *revealVC = self.revealViewController;
@@ -99,15 +119,10 @@
     bottomBorder.backgroundColor = [UIColor whiteColor].CGColor;
     [self.scrollContainer.layer addSublayer:bottomBorder];
     
-    
-    //Dummy content
-    self.temperatures = @[@"67°", @"10°", @"-14°", @"104°", @"75°", @"8°", @"55°", @"93°", @"-24°", @"32°", @"100°", @"0°", @"20°", @"13°", @"60°", @"87°", @"42°", @"91°", @"2°", @"71°", @"88°", @"-7°", @"59°", @"89°"];
-    
-    self.hours = @[@"12 AM", @"1 AM", @"2 AM", @"3 AM", @"4 AM", @"5 AM", @"6 AM", @"7 AM", @"8 AM", @"9 AM", @"10 AM", @"11 AM", @"12 PM", @"1 PM", @"2 PM", @"3 PM", @"4 PM", @"5 PM", @"6 PM", @"7 PM", @"8 PM", @"9 PM", @"10 PM", @"11 PM"];
-    
+    // Creates the views (boxes) inside the Scroll View
     self.contentBoxes = [NSMutableArray new];
     self.timeArray = [NSMutableArray new];
-    self.labelArray = [NSMutableArray new];
+    self.degreeArray = [NSMutableArray new];
     for (NSInteger i = 0; i < 960; i = i+40)
     {
         UIView *hourlyContentBox = [[UIView alloc]initWithFrame:CGRectMake(i, 0, 40, 80)];
@@ -129,43 +144,100 @@
         [hourlyContentBox addSubview:weatherLabelBox];
         
         [self.timeArray addObject:timeBox];
-        [self.labelArray addObject:weatherLabelBox];
+        [self.degreeArray addObject:weatherLabelBox];
         [self.contentBoxes addObject:hourlyContentBox];
         
         [self.scrollContent addSubview:hourlyContentBox];
         
     }
     
-    //Keep outside for-loop.
-    //If put inside for-loop, result will be the same, but system runs thru labeling everytime a new box is added
-    //E.g. "98", "98, 67", "98, 67, 100", "98, 67, 100, 77", etc. until all label have text
-    for (NSInteger i=0; i<[self.temperatures count]; i++)
-    {
-        UILabel *degreeLabel;
-        
-        degreeLabel = [self.labelArray objectAtIndex:i];
-        degreeLabel.text = [self.temperatures objectAtIndex:i];
-        degreeLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:15];
-        degreeLabel.textColor = [UIColor whiteColor];
-        degreeLabel.textAlignment = NSTextAlignmentCenter;
-        
-        //TODO: Remove this NSLog
-        NSLog(@"object: %@", degreeLabel.text);
-    }
+    self.temperatures = [NSMutableArray new];
+    self.hours = [NSMutableArray new];
     
-    for (NSInteger i=0; i<[self.timeArray count]; i++)
+    self.forecastr = [Forecastr sharedManager];
+    self.forecastr.apiKey = FORECAST_API_KEY;
+    
+    [self.forecastr getForecastForLocation:self.locationManager.location
+                                      time:nil
+                                exclusions:nil
+                                    extend:nil
+                                   success:^(id JSON)
     {
-        UILabel *hourLabel;
+        float latitude = self.locationManager.location.coordinate.latitude;
+        float longitude = self.locationManager.location.coordinate.longitude;
         
-        hourLabel = [self.timeArray objectAtIndex:i];
-        hourLabel.text = [self.hours objectAtIndex:i];
-        hourLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:11];
-        hourLabel.textColor = [UIColor whiteColor];
-        hourLabel.textAlignment = NSTextAlignmentCenter;
-        
-        //TODO: Remove this NSLog
-        NSLog(@"Time: %@", hourLabel.text);
-    }
+        [self.forecastr getForecastForLatitude:latitude
+                                     longitude:longitude
+                                          time:nil
+                                    exclusions:nil
+                                        extend:nil
+                                       success:^(id JSON)
+        {
+            self.resultsDictionary = JSON;
+            
+            NSLog(@"Temp: %@ \n Today: %@ \n Lat & Long: %f , %f", self.resultsDictionary[@"currently"][@"summary"], self.resultsDictionary[@"hourly"][@"data"], self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
+            
+            
+            self.hiTempLabel.text = [self.methods convertToHiTemperature:self.resultsDictionary[@"daily"][@"data"][0][@"apparentTemperatureMax"]];
+            self.weatherDescriptionLabel.text = self.resultsDictionary[@"currently"][@"summary"];
+            self.currentTempLabel.text = [self.methods convertToTemperature:self.resultsDictionary[@"currently"][@"temperature"]];
+            self.loTempLabel.text = [self.methods convertToLoTemperature:self.resultsDictionary[@"daily"][@"data"][0][@"apparentTemperatureMin"]];
+            self.feelsLikeTempLabel.text = [self.methods convertToTemperature:self.resultsDictionary[@"currently"][@"apparentTemperature"]];
+            
+            //Pulls in the time starting with the array[1]
+            //Time for the hour after the current hour
+            for (NSInteger i = 1; i < 25; i++)
+            {
+                NSNumber *eachHour;
+                eachHour = self.resultsDictionary[@"hourly"][@"data"][i][@"time"];
+                
+                [self.hours addObject:eachHour];
+            }
+            
+            for (NSInteger i=0; i<[self.timeArray count]; i++)
+            {
+                UILabel *hourLabel;
+                
+                hourLabel = [self.timeArray objectAtIndex:i];
+                hourLabel.text = [self.methods convertEpochTimeToHumanHours:[self.hours objectAtIndex:i]];
+                hourLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:11];
+                hourLabel.textColor = [UIColor whiteColor];
+                hourLabel.textAlignment = NSTextAlignmentCenter;
+                
+            }
+            
+            //Pulls in the temperature starting with the array[1]
+            //Temperature to match the hour
+            for (NSInteger i = 1; i < 25; i++)
+            {
+                NSNumber *hourlyTemp;
+                hourlyTemp = self.resultsDictionary[@"hourly"][@"data"][i][@"temperature"];
+                
+                [self.temperatures addObject:hourlyTemp];
+            }
+            
+            for (NSInteger i=0; i<[self.temperatures count]; i++)
+            {
+                UILabel *degreeLabel;
+                
+                degreeLabel = [self.degreeArray objectAtIndex:i];
+                degreeLabel.text = [self.methods convertToTemperature:[self.temperatures objectAtIndex:i]];
+                degreeLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:15];
+                degreeLabel.textColor = [UIColor whiteColor];
+                degreeLabel.textAlignment = NSTextAlignmentCenter;
+                
+            }
+            
+                                       }
+                                       failure:^(NSError *error, id response) {
+                                           NSLog(@"Error while retrieving forecast: %@", [self.forecastr messageForError:error withResponse:response]);
+                                       }];
+                                   }
+                                   failure:^(NSError *error, id response) {
+                                       NSLog(@"Error while retrieving forecast: %@", [self.forecastr messageForError:error withResponse:response]);
+                                   }];
+    
+
     
     
     
@@ -183,6 +255,40 @@
 {
     NSArray *containerViews = @[self.mainDesignContainer, self.container1, self.container2, self.container3, self.scrollContainer, self.scrollContent];
     return containerViews;
+}
+
+//TODO: Remove this method
+//Used in NSLog
+-(NSString *) deviceLocation
+{
+    return [NSString stringWithFormat:@"latitude: %f  longitude: %f", self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
+    {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+    
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    UIAlertView *errorAlert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"There was an error retrieving your location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [errorAlert show];
+    NSLog(@"Error: %@",error.description);
+}
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *crnLoc = [locations lastObject];
+//    self.latitude.text = [NSString stringWithFormat:@"%.8f",crnLoc.coordinate.latitude];
+//    self.longitude.text = [NSString stringWithFormat:@"%.8f",crnLoc.coordinate.longitude];
+//    self.altitude.text = [NSString stringWithFormat:@"%.0f m",crnLoc.altitude];
+//    self.speed.text = [NSString stringWithFormat:@"%.1f m/s", crnLoc.speed];
+    
+    [self.locationManager stopUpdatingLocation];
+    
+    NSLog(@"From the method: %@", crnLoc);
 }
 
 /*
