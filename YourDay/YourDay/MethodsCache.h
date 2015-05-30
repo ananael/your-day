@@ -39,11 +39,15 @@
 -(NSString *) convertDecimalToRoundedString:(NSNumber *)number;
 -(NSString *) convertToTemperature:(NSNumber *)number;
 -(NSString *) convertEpochTimeToHumanHours:(NSNumber *)number;
+-(NSString *) convertEpochTimeToHumanDay:(NSNumber *)number;
+-(NSString *) convertEpochTimeToHumanDate:(NSNumber *)number;
 -(NSString *) convertToHiTemperature:(NSNumber *)number;
 -(NSString *) convertToLoTemperature:(NSNumber *)number;
-
-
-
+-(NSString *) convertToHumidityLabel:(NSNumber *)number;
+-(NSString *) convertToPrecipProbability:(NSString *)precipType Probability:(NSNumber *)number;
+-(NSString *) convertToWindBearing:(NSNumber *)number1 AndSpeed:(NSNumber *)number2;
+-(NSString *) convertToWindDirection:(NSNumber *)number;
+-(NSString *) convertToVisibilityLabel:(NSNumber *)number;
 
 
 

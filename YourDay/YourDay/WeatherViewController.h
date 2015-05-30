@@ -12,6 +12,6 @@
 
 @interface WeatherViewController : UIViewController <CLLocationManagerDelegate>
 
-
+@property (strong, nonatomic) NSMutableDictionary *resultsDictionary;
 
 @end

@@ -84,7 +84,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Partly Cloudy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g54-mO-RWm" userLabel="weatherDescription">
                                                 <rect key="frame" x="122" y="0.0" width="80" height="70"/>
-                                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="19"/>
+                                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -149,17 +149,30 @@
                                     <constraint firstAttribute="width" constant="600" id="kx4-Oy-mHJ"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rlq-pe-1IO" userLabel="buttonContainer">
+                                <rect key="frame" x="280" y="520" width="40" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.99066370550000005" blue="0.36909538790000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="F28-bH-iaN"/>
+                                    <constraint firstAttribute="width" constant="40" id="zUR-d7-nzy"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.56411507100000002" green="0.71709645280000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Rlq-pe-1IO" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Phc-3m-AF8" secondAttribute="leading" constant="280" id="5fN-7z-Re4"/>
                             <constraint firstItem="acF-uD-JGP" firstAttribute="leading" secondItem="Phc-3m-AF8" secondAttribute="leading" id="5sM-Fx-D9e"/>
                             <constraint firstAttribute="trailing" secondItem="acF-uD-JGP" secondAttribute="trailing" id="6fA-oa-2rH"/>
                             <constraint firstItem="Lx3-CN-MuB" firstAttribute="top" secondItem="Ib1-LE-QdP" secondAttribute="bottom" constant="5" id="7RG-7G-ibV"/>
                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Lx3-CN-MuB" secondAttribute="trailing" constant="150" id="KGh-UV-Yeh"/>
                             <constraint firstAttribute="trailing" secondItem="6vU-A8-fmi" secondAttribute="trailing" id="NXt-SD-NUc"/>
                             <constraint firstItem="AYO-Ea-34a" firstAttribute="top" secondItem="acF-uD-JGP" secondAttribute="bottom" id="P1I-7e-dSa"/>
+                            <constraint firstItem="Rlq-pe-1IO" firstAttribute="centerX" secondItem="Phc-3m-AF8" secondAttribute="centerX" id="PQL-ex-ial"/>
+                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Rlq-pe-1IO" secondAttribute="trailing" constant="280" id="Rnq-c5-iLz"/>
                             <constraint firstItem="6vU-A8-fmi" firstAttribute="leading" secondItem="Phc-3m-AF8" secondAttribute="leading" id="hW1-Y3-IeL"/>
+                            <constraint firstItem="Rlq-pe-1IO" firstAttribute="top" secondItem="6vU-A8-fmi" secondAttribute="bottom" constant="15" id="hpJ-hZ-PNF"/>
                             <constraint firstItem="acF-uD-JGP" firstAttribute="top" secondItem="Phc-3m-AF8" secondAttribute="top" id="hvV-xw-KW3"/>
+                            <constraint firstItem="AYO-Ea-34a" firstAttribute="top" secondItem="Rlq-pe-1IO" secondAttribute="bottom" constant="40" id="kp5-LY-M5E"/>
                             <constraint firstItem="6vU-A8-fmi" firstAttribute="centerX" secondItem="Phc-3m-AF8" secondAttribute="centerX" id="nMT-vv-bX6"/>
                             <constraint firstItem="Lx3-CN-MuB" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Phc-3m-AF8" secondAttribute="leading" constant="150" id="ns6-ao-aKc"/>
                             <constraint firstItem="Lx3-CN-MuB" firstAttribute="centerX" secondItem="Phc-3m-AF8" secondAttribute="centerX" id="pgT-9d-w4g"/>
@@ -173,6 +186,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backgroundView" destination="acF-uD-JGP" id="7yZ-UO-atE"/>
+                        <outlet property="buttonContainer" destination="Rlq-pe-1IO" id="CEB-Vq-41C"/>
                         <outlet property="container1" destination="yNd-Pm-VDp" id="gEd-wh-nbp"/>
                         <outlet property="container2" destination="iy6-3o-mKH" id="BYc-NH-A5i"/>
                         <outlet property="container3" destination="aFa-3c-lsa" id="rB7-ps-6ai"/>
@@ -189,6 +203,7 @@
                         <outlet property="scrollView" destination="qqg-Bm-ytj" id="vIn-xg-ac9"/>
                         <outlet property="sidebarButton" destination="sF7-2W-AsA" id="xEc-gi-xRT"/>
                         <outlet property="weatherDescriptionLabel" destination="g54-mO-RWm" id="uvV-xB-hiJ"/>
+                        <segue destination="gbT-UA-LvO" kind="show" identifier="weeklySegue" id="fw8-OA-WVd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zoa-ty-hBw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -198,7 +213,7 @@
         <!--Weekly Weather View Controller-->
         <scene sceneID="xjI-H0-e1j">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="gbT-UA-LvO" customClass="WeeklyWeatherViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="weeklyWeatherID" automaticallyAdjustsScrollViewInsets="NO" id="gbT-UA-LvO" customClass="WeeklyWeatherViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bjU-A8-0FA"/>
                         <viewControllerLayoutGuide type="bottom" id="meN-7q-1Jr"/>
@@ -259,7 +274,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="25" id="X0T-2t-WTt"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="12"/>
+                                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="13"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -268,7 +283,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="25" id="WEN-sA-irz"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="12"/>
+                                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="13"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -277,7 +292,7 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="25" id="eKk-HD-uPM"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="12"/>
+                                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="13"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -407,7 +422,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HAe-uu-IFO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="971" y="543"/>
+            <point key="canvasLocation" x="1674" y="1224"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AVu-OG-NLo">
@@ -473,9 +488,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="kfm-6s-n2C" kind="custom" identifier="forecastPush" customClass="SWRevealViewControllerSeguePushController" id="bLE-ff-VxM"/>
-                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="todo" id="tWz-Pi-yF3">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -771,27 +783,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SEh-rf-6aL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2338" y="356"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="gwa-RP-Weu">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kfm-6s-n2C" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Po-Rk-Tvi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="gbT-UA-LvO" kind="relationship" relationship="rootViewController" id="gvZ-Ny-jHf"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dPw-Bb-FNN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="267" y="543"/>
         </scene>
         <!--RSS View Controller-->
         <scene sceneID="nLV-Ah-jdb">

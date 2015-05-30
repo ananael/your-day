@@ -148,6 +148,35 @@
     return truncatedTime;
 }
 
+-(NSString *) convertEpochTimeToHumanDay:(NSNumber *)number
+{
+    NSInteger convertedNumber = [number integerValue];
+    NSTimeInterval time = convertedNumber;
+    NSDate *humanDate = [NSDate dateWithTimeIntervalSince1970:time];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"EEE"];
+    
+    NSString *lowercaseDayFormat = [[formatter stringFromDate:humanDate] lowercaseStringWithLocale:[NSLocale currentLocale]];
+    
+    return lowercaseDayFormat;
+}
+
+-(NSString *) convertEpochTimeToHumanDate:(NSNumber *)number
+{
+    NSInteger convertedNumber = [number integerValue];
+    NSTimeInterval time = convertedNumber;
+    NSDate *humanDate = [NSDate dateWithTimeIntervalSince1970:time];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM d"];
+    
+    //NSString *lowercaseFormat = [[formatter stringFromDate:humanDate] lowercaseStringWithLocale:[NSLocale currentLocale]];
+    NSString *truncatedDate = [formatter stringFromDate:humanDate];
+    
+    return truncatedDate;
+}
+
 -(NSString *) convertToHiTemperature:(NSNumber *)number
 {
     NSString *convertedNumber = [self convertDecimalToRoundedString:number];
@@ -162,8 +191,109 @@
     return temperatureString;
 }
 
+-(NSString *) convertToHumidityLabel:(NSNumber *)number
+{
+    CGFloat convertNumber = [number floatValue];
+    NSString *humidityString = [NSString stringWithFormat:@"hum: %.0f%%", (convertNumber*100)];
+    
+    return humidityString;
+}
 
+-(NSString *) convertToPrecipProbability:(NSString *)precipType Probability:(NSNumber *)number
+{
+    CGFloat convertNumber = [number floatValue];
+    if (precipType == nil)
+    {
+        NSString *precipString = [NSString stringWithFormat:@"0%% precipitation"];
+        return precipString;
+    }
+    if ((convertNumber < 1.0f))
+    {
+        NSString *precipString = [NSString stringWithFormat:@"%@? %.0f%% chance", precipType, (convertNumber*100)];
+        return precipString;
+    }
+    
+    NSString *precipString = [NSString stringWithFormat:@"%@? 100%% chance", precipType];
+    return precipString;
+    
+}
 
+-(NSString *) convertToWindBearing:(NSNumber *)number1 AndSpeed:(NSNumber *)number2
+{
+    NSString *windWithSpeed = [NSString stringWithFormat:@"wind: %@ %@ mph", [self convertToWindDirection:number1], [self convertDecimalToRoundedString:number2]];
+    return windWithSpeed;
+}
+
+-(NSString *) convertToVisibilityLabel:(NSNumber *)number
+{
+    if (number == nil) {
+        NSString *visibilityString = [NSString stringWithFormat:@"visibility: no data"];
+        return visibilityString;
+    }
+    NSString *visibilityString = [NSString stringWithFormat:@"visibility: %@ mi", [self convertDecimalToRoundedString:number]];
+    return visibilityString;
+}
+
+-(NSString *) convertToWindDirection:(NSNumber *)number
+{
+    NSInteger convertedNumber = [number integerValue];
+    NSString *direction;
+    
+    if ((convertedNumber >= 0) && (convertedNumber <= 11))
+    {
+        direction = @"N";
+    } else if ((convertedNumber >= 12) && (convertedNumber <= 34))
+    {
+        direction = @"NNE";
+    } else if ((convertedNumber >= 35) && (convertedNumber <= 57))
+    {
+        direction = @"NE";
+    } else if ((convertedNumber >= 58) && (convertedNumber <= 79))
+    {
+        direction = @"ENE";
+    } else if ((convertedNumber >= 80) && (convertedNumber <= 101))
+    {
+        direction = @"E";
+    } else if ((convertedNumber >= 102) && (convertedNumber <= 124))
+    {
+        direction = @"ESE";
+    } else if ((convertedNumber >= 125) && (convertedNumber <= 146))
+    {
+        direction = @"SE";
+    } else if ((convertedNumber >= 147) && (convertedNumber <= 169))
+    {
+        direction = @"SSE";
+    } else if ((convertedNumber >= 170) && (convertedNumber <= 191))
+    {
+        direction = @"S";
+    } else if ((convertedNumber >= 192) && (convertedNumber <= 214))
+    {
+        direction = @"SSW";
+    } else if ((convertedNumber >= 215) && (convertedNumber <= 236))
+    {
+        direction = @"SW";
+    } else if ((convertedNumber >= 237) && (convertedNumber <= 259))
+    {
+        direction = @"WSW";
+    } else if ((convertedNumber >= 260) && (convertedNumber <= 281))
+    {
+        direction = @"W";
+    } else if ((convertedNumber >= 282) && (convertedNumber <= 304))
+    {
+        direction = @"WNW";
+    } else if ((convertedNumber >= 305) && (convertedNumber <= 326))
+    {
+        direction = @"NW";
+    } else if ((convertedNumber >= 327) && (convertedNumber <= 349))
+    {
+        direction = @"NNW";
+    } else if ((convertedNumber >= 350) && (convertedNumber <= 360))
+    {
+        direction = @"N";
+    }
+    
+    return direction;
+}
 
 
 

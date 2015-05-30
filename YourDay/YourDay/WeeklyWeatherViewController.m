@@ -9,6 +9,7 @@
 #import "WeeklyWeatherViewController.h"
 #import <SWRevealViewController.h>
 #import "WeeklyWeatherTableViewCell.h"
+#import "MethodsCache.h"
 
 
 @interface WeeklyWeatherViewController ()
@@ -18,9 +19,25 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) WeeklyWeatherTableViewCell *cellPrototype;
 
+@property (strong, nonatomic) NSMutableArray *dayArray;
+@property (strong, nonatomic) NSMutableArray *summaryArray;
+@property (strong, nonatomic) NSMutableArray *temperatureArray;
+@property (strong, nonatomic) NSMutableArray *humidityArray;
+@property (strong, nonatomic) NSMutableArray *precipArray;
+@property (strong, nonatomic) NSMutableArray *windArray;
+@property (strong, nonatomic) NSMutableArray *visibilityArray;
+@property (strong, nonatomic) NSMutableArray *iconArray;
+@property (strong, nonatomic) NSMutableArray *dateArray;
+
+@property (strong, nonatomic) MethodsCache *methods;
+
+
 //Dummy data
-@property (strong, nonatomic) NSArray *weatherDetailArray;
-@property (strong, nonatomic) NSArray *dayArray;
+//@property (strong, nonatomic) NSArray *weatherDetailArray;
+@property (strong, nonatomic) NSArray *numberArray;
+@property (strong, nonatomic) NSMutableArray *oneArray;
+@property (strong, nonatomic) NSMutableArray *twoArray;
+@property (strong, nonatomic) NSMutableArray *threeArray;
 
 
 @end
@@ -40,6 +57,8 @@
     
     self.cellPrototype = [self.tableView dequeueReusableCellWithIdentifier:@"weatherCell"];
     
+    self.methods = [MethodsCache new];
+    
     //Implements the slide-out view controller
     SWRevealViewController *revealVC = self.revealViewController;
     if (revealVC)
@@ -50,11 +69,78 @@
         
     }
     
-    // TODO: Remove dummy data
-    //Dummy data
-    self.weatherDetailArray = @[@"Could be snow", @"Could be rain", @"Could be sleet, but what about Dick Tracy.  That's a mighty fine name.", @"Could be hail", @"Could be tornado. Put the chickens back in the coop!", @"Could be thunderstorm", @"Could be cloudy"];
+    //Data broken down into appropriate arrays for tableview cells
+    self.dayArray = [NSMutableArray new];
+    self.summaryArray = [NSMutableArray new];
+    self.temperatureArray = [NSMutableArray new];
+    self.humidityArray = [NSMutableArray new];
+    self.precipArray = [NSMutableArray new];
+    self.windArray = [NSMutableArray new];
+    self.visibilityArray = [NSMutableArray new];
+    self.iconArray = [NSMutableArray new];
+    self.dateArray = [NSMutableArray new];
     
-    self.dayArray = @[@"sun", @"mon", @"tue", @"wed", @"thu", @"fri", @"sat"];
+    for (NSInteger i=0; i<7; i++)
+    {
+        //Each day and Date
+        NSNumber *epochTime;
+        NSString *convertedDay;
+        NSString *convertedDate;
+        epochTime = self.resultsDictionary[@"daily"][@"data"][i][@"time"];
+        convertedDay = [self.methods convertEpochTimeToHumanDay:epochTime];
+        convertedDate = [self.methods convertEpochTimeToHumanDate:epochTime];
+        [self.dayArray addObject:convertedDay];
+        [self.dateArray addObject:convertedDate];
+        
+        //Each day's weather in sentence format
+        NSString *weatherSummary;
+        weatherSummary = self.resultsDictionary[@"daily"][@"data"][i][@"summary"];
+        [self.summaryArray addObject:weatherSummary];
+        
+        //Each day's expected high temperature
+        NSString *convertedTemp;
+        convertedTemp = [self.methods convertToTemperature:self.resultsDictionary[@"daily"][@"data"][i][@"temperatureMax"]];
+        [self.temperatureArray addObject:convertedTemp];
+        
+        //Each day's expected humidity level
+        NSString *humidity;
+        humidity = [self.methods convertToHumidityLabel:self.resultsDictionary[@"daily"][@"data"][i][@"humidity"]];
+        [self.humidityArray addObject:humidity];
+        
+        //Each day's expected precipitation
+        NSString *precipitation;
+        precipitation = [self.methods convertToPrecipProbability:self.resultsDictionary[@"daily"][@"data"][i][@"precipType"] Probability:self.resultsDictionary[@"daily"][@"data"][i][@"precipProbability"]];
+        [self.precipArray addObject:precipitation];
+        
+        //Each day's wind direction and speed
+        NSString *windInfo;
+        windInfo = [self.methods convertToWindBearing:self.resultsDictionary[@"daily"][@"data"][i][@"windBearing"] AndSpeed:self.resultsDictionary[@"daily"][@"data"][i][@"windSpeed"]];
+        [self.windArray addObject:windInfo];
+        
+        //Each day's expected visibility
+        NSString *visibility;
+        visibility = [self.methods convertToVisibilityLabel:self.resultsDictionary[@"daily"][@"data"][i][@"visibility"]];
+        [self.visibilityArray addObject:visibility];
+        
+        //Each day's icon summary used to select appropriate icon image
+        NSString *iconInfo;
+        iconInfo = self.resultsDictionary[@"daily"][@"data"][i][@"icon"];
+        [self.iconArray addObject:iconInfo];
+        
+    }
+    
+    
+    
+    NSLog(@"FROM WEEKLY WEATHER: %@", self.resultsDictionary[@"currently"]);
+    NSLog(@"%@", self.temperatureArray);
+    NSLog(@"%@", self.summaryArray);
+    NSLog(@"%@", self.dayArray);
+    NSLog(@"%@", self.dateArray);
+    NSLog(@"%@", self.humidityArray);
+    NSLog(@"%@", self.precipArray);
+    NSLog(@"%@", self.windArray);
+    NSLog(@"%@", self.visibilityArray);
+    NSLog(@"%@", self.iconArray);
     
 }
 
@@ -74,12 +160,14 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     // Return the number of rows in the section.
-    return [self.weatherDetailArray count];
+    //return [self.weatherDetailArray count];
+    return [self.summaryArray count];
 }
 
 -(NSString *)labelTextForRow:(NSInteger)row
 {
-    return [self.weatherDetailArray objectAtIndex:row];
+    //return [self.weatherDetailArray objectAtIndex:row];
+    return [self.summaryArray objectAtIndex:row];
 }
 
 -(CGSize) sizeOfLabel:(UILabel *)label withText:(NSString *)text
@@ -120,16 +208,26 @@
  
  // Configure the cell...
      
-     [self sizeOfLabel:cell.weatherDetailLabel withText:self.weatherDetailArray[indexPath.row]];
-     cell.weatherDetailLabel.text = self.weatherDetailArray[indexPath.row];
+     [self sizeOfLabel:cell.weatherDetailLabel withText:self.summaryArray[indexPath.row]];
+     cell.weatherDetailLabel.text = self.summaryArray[indexPath.row];
+     cell.weatherDetailLabel.textColor = [UIColor blackColor];
      
      //cell.dayLabel.transform = CGAffineTransformMakeRotation(M_PI_2*3);
      cell.dayLabel.transform = CGAffineTransformScale(CGAffineTransformMakeRotation(M_PI_2*3), 1.25, 1.25);
      cell.dayLabel.textColor = [UIColor blackColor];
      cell.dayLabel.text = self.dayArray[indexPath.row];
      
-     cell.weatherDetailLabel.textColor = [UIColor blackColor];
+     cell.tempLabel.text = self.temperatureArray[indexPath.row];
      
+     cell.humidityLabel.text = self.humidityArray[indexPath.row];
+     
+     cell.precipLabel.text = self.precipArray[indexPath.row];
+     
+     cell.windLabel.text = self.windArray[indexPath.row];
+     
+     cell.visibilityLabel.text = self.visibilityArray[indexPath.row];
+     
+     cell.dateLabel.text = self.dateArray[indexPath.row];
      cell.dateLabel.textColor = [UIColor blackColor];
      
      //Even though this code specifies modifications only to cell at index.row == 0,
@@ -146,7 +244,13 @@
          
          cell.dayLabel.text = @"now";
          cell.dayLabel.textColor = [UIColor whiteColor];
+         cell.tempLabel.text = [self.methods convertToTemperature:self.resultsDictionary[@"currently"][@"temperature"]];
+         cell.weatherDetailLabel.text = self.resultsDictionary[@"currently"][@"summary"];
          cell.weatherDetailLabel.textColor = [UIColor whiteColor];
+         cell.humidityLabel.text = [self.methods convertToHumidityLabel:self.resultsDictionary[@"currently"][@"humidity"]];
+         cell.precipLabel.text = [self.methods convertToPrecipProbability:self.resultsDictionary[@"currently"][@"precipType"] Probability:self.resultsDictionary[@"currently"][@"precipProbability"]];
+         cell.windLabel.text = [self.methods convertToWindBearing:self.resultsDictionary[@"currently"][@"windBearing"] AndSpeed:self.resultsDictionary[@"currently"][@"windSpeed"]];
+         cell.visibilityLabel.text = [self.methods convertToVisibilityLabel:self.resultsDictionary[@"currently"][@"visibility"]];
          cell.dateLabel.textColor = [UIColor whiteColor];
      }
      

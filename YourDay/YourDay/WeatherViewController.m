@@ -39,6 +39,8 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *scrollContent;
 
+@property (weak, nonatomic) IBOutlet UIView *buttonContainer;
+
 @property (strong, nonatomic) NSMutableArray *contentBoxes;
 @property (strong, nonatomic) NSMutableArray *degreeArray;
 @property (strong, nonatomic) NSMutableArray *timeArray;
@@ -46,12 +48,13 @@
 @property (strong, nonatomic) NSMutableArray *hours;
 
 @property (strong, nonatomic) Forecastr *forecastr;
-@property (strong, nonatomic) NSMutableDictionary *resultsDictionary;
 
 @property (strong, nonatomic) CLLocation *location;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
 @property (strong, nonatomic) MethodsCache *methods;
+
+
 
 @end
 
@@ -151,9 +154,21 @@
         
     }
     
+    //Button segues to WeeklyWeatherVC
+    UIButton *moreButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
+    [moreButton addTarget:self action:@selector(moreButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    moreButton.backgroundColor = [UIColor whiteColor];
+    moreButton.layer.cornerRadius = 20;
+    [moreButton setTitle:@"more" forState:UIControlStateNormal];
+    [moreButton setTitleColor:[self.methods navyFog] forState:UIControlStateNormal];
+    moreButton.titleLabel.font = [UIFont fontWithName:@"Thonburi-Bold" size:12];
+    [self.buttonContainer addSubview:moreButton];
+    
+    
     self.temperatures = [NSMutableArray new];
     self.hours = [NSMutableArray new];
     
+
     self.forecastr = [Forecastr sharedManager];
     self.forecastr.apiKey = FORECAST_API_KEY;
     
@@ -175,7 +190,7 @@
         {
             self.resultsDictionary = JSON;
             
-            NSLog(@"Temp: %@ \n Today: %@ \n Lat & Long: %f , %f", self.resultsDictionary[@"currently"][@"summary"], self.resultsDictionary[@"hourly"][@"data"], self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
+            NSLog(@"Temp: %@ \n Today: %@ \n Lat & Long: %f , %f", self.resultsDictionary[@"currently"][@"temperature"], self.resultsDictionary[@"daily"][@"data"], self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
             
             
             self.hiTempLabel.text = [self.methods convertToHiTemperature:self.resultsDictionary[@"daily"][@"data"][0][@"apparentTemperatureMax"]];
@@ -228,6 +243,7 @@
                 
             }
             
+            
                                        }
                                        failure:^(NSError *error, id response) {
                                            NSLog(@"Error while retrieving forecast: %@", [self.forecastr messageForError:error withResponse:response]);
@@ -236,9 +252,6 @@
                                    failure:^(NSError *error, id response) {
                                        NSLog(@"Error while retrieving forecast: %@", [self.forecastr messageForError:error withResponse:response]);
                                    }];
-    
-
-    
     
     
     
@@ -253,7 +266,7 @@
 
 - (NSArray *)containersArray
 {
-    NSArray *containerViews = @[self.mainDesignContainer, self.container1, self.container2, self.container3, self.scrollContainer, self.scrollContent];
+    NSArray *containerViews = @[self.mainDesignContainer, self.container1, self.container2, self.container3, self.scrollContainer, self.scrollContent, self.buttonContainer];
     return containerViews;
 }
 
@@ -291,14 +304,27 @@
     NSLog(@"From the method: %@", crnLoc);
 }
 
-/*
+- (IBAction)moreButtonTapped:(id)sender
+{
+    [self performSegueWithIdentifier:@"weeklySegue" sender:self];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"weeklySegue"])
+    {
+        WeeklyWeatherViewController *weeklyVC = segue.destinationViewController;
+        weeklyVC.resultsDictionary = self.resultsDictionary;
+        
+    }
+    
+ 
 }
-*/
+
 
 @end
