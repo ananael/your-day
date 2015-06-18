@@ -44,8 +44,10 @@
 @property (strong, nonatomic) NSMutableArray *contentBoxes;
 @property (strong, nonatomic) NSMutableArray *degreeArray;
 @property (strong, nonatomic) NSMutableArray *timeArray;
+@property (strong, nonatomic) NSMutableArray *iconArray;
 @property (strong, nonatomic) NSMutableArray *temperatures;
 @property (strong, nonatomic) NSMutableArray *hours;
+@property (strong, nonatomic) NSMutableArray *icons;
 
 @property (strong, nonatomic) Forecastr *forecastr;
 
@@ -54,7 +56,7 @@
 
 @property (strong, nonatomic) MethodsCache *methods;
 
-
+@property (strong, nonatomic) NSArray *testIcons;
 
 @end
 
@@ -123,8 +125,10 @@
     [self.scrollContainer.layer addSublayer:bottomBorder];
     
     // Creates the views (boxes) inside the Scroll View
+    //Initialzes Mutable Arrays
     self.contentBoxes = [NSMutableArray new];
     self.timeArray = [NSMutableArray new];
+    self.iconArray = [NSMutableArray new];
     self.degreeArray = [NSMutableArray new];
     for (NSInteger i = 0; i < 960; i = i+40)
     {
@@ -135,7 +139,7 @@
         timeBox.backgroundColor = [UIColor clearColor];
         
         UIImageView *hourlyIconBox = [[UIImageView alloc]initWithFrame:CGRectMake(2, 20, 36, 36)];
-        hourlyIconBox.backgroundColor = [UIColor blueColor];
+        hourlyIconBox.backgroundColor = [UIColor clearColor];
         
         UILabel *weatherLabelBox = [[UILabel alloc]initWithFrame:CGRectMake(2, 58, 36, 20)];
         weatherLabelBox.backgroundColor = [UIColor clearColor];
@@ -147,6 +151,7 @@
         [hourlyContentBox addSubview:weatherLabelBox];
         
         [self.timeArray addObject:timeBox];
+        [self.iconArray addObject:hourlyIconBox];
         [self.degreeArray addObject:weatherLabelBox];
         [self.contentBoxes addObject:hourlyContentBox];
         
@@ -164,11 +169,12 @@
     moreButton.titleLabel.font = [UIFont fontWithName:@"Thonburi-Bold" size:12];
     [self.buttonContainer addSubview:moreButton];
     
-    
+    //Initialzes Mutable Arrays
     self.temperatures = [NSMutableArray new];
     self.hours = [NSMutableArray new];
-    
+    self.icons = [NSMutableArray new];
 
+    //Call to Forecast.io
     self.forecastr = [Forecastr sharedManager];
     self.forecastr.apiKey = FORECAST_API_KEY;
     
@@ -190,9 +196,9 @@
         {
             self.resultsDictionary = JSON;
             
-            NSLog(@"Temp: %@ \n Today: %@ \n Lat & Long: %f , %f", self.resultsDictionary[@"currently"][@"temperature"], self.resultsDictionary[@"daily"][@"data"], self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
+            NSLog(@"Temp: %@ \n Current: %@ \n The Week: %@ \n Lat & Long: %f , %f", self.resultsDictionary[@"currently"][@"temperature"], self.resultsDictionary[@"currently"], self.resultsDictionary[@"daily"][@"data"], self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
             
-            
+            [self.methods convertString:self.resultsDictionary[@"currently"][@"icon"] ToDarkIcon:self.currentWeatherIcon];
             self.hiTempLabel.text = [self.methods convertToHiTemperature:self.resultsDictionary[@"daily"][@"data"][0][@"apparentTemperatureMax"]];
             self.weatherDescriptionLabel.text = self.resultsDictionary[@"currently"][@"summary"];
             self.currentTempLabel.text = [self.methods convertToTemperature:self.resultsDictionary[@"currently"][@"temperature"]];
@@ -240,7 +246,20 @@
                 degreeLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:15];
                 degreeLabel.textColor = [UIColor whiteColor];
                 degreeLabel.textAlignment = NSTextAlignmentCenter;
+
+            }
+            
+            for (NSInteger i = 1; i < 25; i++)
+            {
+                NSString *hourlyIcon;
+                hourlyIcon = self.resultsDictionary[@"hourly"][@"data"][i][@"icon"];
                 
+                [self.icons addObject:hourlyIcon];
+            }
+            
+            for (NSInteger i=0; i<[self.icons count]; i++)
+            {
+                [self.methods convertString:[self.icons objectAtIndex:i] ToLightIcon:[self.iconArray objectAtIndex:i]];
             }
             
             

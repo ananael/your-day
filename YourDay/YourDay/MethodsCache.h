@@ -48,8 +48,8 @@
 -(NSString *) convertToWindBearing:(NSNumber *)number1 AndSpeed:(NSNumber *)number2;
 -(NSString *) convertToWindDirection:(NSNumber *)number;
 -(NSString *) convertToVisibilityLabel:(NSNumber *)number;
-
-
+-(void) convertString:(NSString *)icon ToDarkIcon:(UIImageView *)view;
+-(void) convertString:(NSString *)icon ToLightIcon:(UIImageView *)view;
 
 
 

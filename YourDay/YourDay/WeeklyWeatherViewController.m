@@ -227,6 +227,8 @@
      
      cell.visibilityLabel.text = self.visibilityArray[indexPath.row];
      
+     [self.methods convertString:self.iconArray[indexPath.row] ToDarkIcon:cell.weatherIcon];
+     
      cell.dateLabel.text = self.dateArray[indexPath.row];
      cell.dateLabel.textColor = [UIColor blackColor];
      
@@ -251,6 +253,7 @@
          cell.precipLabel.text = [self.methods convertToPrecipProbability:self.resultsDictionary[@"currently"][@"precipType"] Probability:self.resultsDictionary[@"currently"][@"precipProbability"]];
          cell.windLabel.text = [self.methods convertToWindBearing:self.resultsDictionary[@"currently"][@"windBearing"] AndSpeed:self.resultsDictionary[@"currently"][@"windSpeed"]];
          cell.visibilityLabel.text = [self.methods convertToVisibilityLabel:self.resultsDictionary[@"currently"][@"visibility"]];
+         [self.methods convertString:self.resultsDictionary[@"currently"][@"icon"] ToLightIcon:cell.weatherIcon];
          cell.dateLabel.textColor = [UIColor whiteColor];
      }
      

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hjT-WE-iMZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hjT-WE-iMZ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -35,9 +35,8 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5jf-L1-ENS" userLabel="currentIcon">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-dark-tornado.png" translatesAutoresizingMaskIntoConstraints="NO" id="5jf-L1-ENS" userLabel="currentIcon">
                                                 <rect key="frame" x="10" y="9" width="53" height="53"/>
-                                                <color key="backgroundColor" red="0.56411507100000002" green="0.71709645280000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.53367552009999997" blue="0.51704722579999995" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
@@ -339,7 +338,6 @@
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PQO-ZG-BlG">
                                                     <rect key="frame" x="530" y="5" width="60" height="60"/>
-                                                    <color key="backgroundColor" red="1" green="0.99066370550000005" blue="0.36909538790000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="Pxh-Dm-Y1y"/>
                                                         <constraint firstAttribute="width" secondItem="PQO-ZG-BlG" secondAttribute="height" multiplier="1:1" id="azZ-h0-Lho"/>
@@ -390,7 +388,7 @@
                                             <outlet property="tempLabel" destination="QQq-ec-xgl" id="SO7-MU-hve"/>
                                             <outlet property="visibilityLabel" destination="Yyj-Jl-qHc" id="jk1-lO-wlr"/>
                                             <outlet property="weatherDetailLabel" destination="YCW-vG-Dkr" id="rp2-ah-Bcs"/>
-                                            <outlet property="weatherImage" destination="PQO-ZG-BlG" id="DPK-xe-SxV"/>
+                                            <outlet property="weatherIcon" destination="PQO-ZG-BlG" id="4L8-0k-5xe"/>
                                             <outlet property="windLabel" destination="bJt-yS-xbd" id="WNa-73-9z7"/>
                                         </connections>
                                     </tableViewCell>
@@ -1591,6 +1589,7 @@
     <resources>
         <image name="LeftRevealButton.png" width="44" height="44"/>
         <image name="WeatherDesign.png" width="403" height="403"/>
+        <image name="icon-dark-tornado.png" width="112" height="112"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cGC-LA-qns"/>

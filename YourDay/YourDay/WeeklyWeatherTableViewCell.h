@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *precipLabel;
 @property (weak, nonatomic) IBOutlet UILabel *windLabel;
 @property (weak, nonatomic) IBOutlet UILabel *visibilityLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *weatherImage;
+@property (weak, nonatomic) IBOutlet UIImageView *weatherIcon;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @end

@@ -295,7 +295,93 @@
     return direction;
 }
 
+-(void) convertString:(NSString *)icon ToDarkIcon:(UIImageView *)view
+{
+    if ([icon isEqualToString:@"clear-day"])
+    {
+        view.image = [UIImage imageNamed:@"icon-dark-sunny"];
+    }
+    else if ([icon isEqualToString:@"partly-cloudy-day"])
+    {
+        view.image = [UIImage imageNamed:@"icon-dark-pc-day"];
+    }
+    else if ([icon isEqualToString:@"partly-cloudy-night"])
+    {
+        view.image = [UIImage imageNamed:@"icon-dark-pc-night"];
+    }
+    else if ([icon isEqualToString:@"cloudy"])
+    {
+        view.image = [UIImage imageNamed:@"icon-dark-cloudy"];
+    }
+    else if ([icon isEqualToString:@"rain"])
+    {
+        view.image = [UIImage imageNamed:@"icon-dark-rain-cloud"];
+    }
+    else if ([icon isEqualToString:@"thunderstorm"])
+    {
+        view.image = [UIImage imageNamed:@"icon-dark-thunderstorm"];
+    }
+    else if ([icon isEqualToString:@"clear-night"])
+    {
+        view.image = [UIImage imageNamed:@"icon-dark-moon"];
+    }
+    else if ([icon isEqualToString:@"hail"])
+    {
+        view.image = [UIImage imageNamed:@"icon-dark-hail"];
+    }
+    else if ([icon isEqualToString:@"snow"])
+    {
+        view.image = [UIImage imageNamed:@"icon-dark-snowflake"];
+    }
+    else if ([icon isEqualToString:@"tornado"])
+    {
+        view.image = [UIImage imageNamed:@"icon-dark-tornado"];
+    }
+}
 
+-(void) convertString:(NSString *)icon ToLightIcon:(UIImageView *)view
+{
+    if ([icon isEqualToString:@"clear-day"])
+    {
+        view.image = [UIImage imageNamed:@"icon-light-sunny"];
+    }
+    else if ([icon isEqualToString:@"partly-cloudy-day"])
+    {
+        view.image = [UIImage imageNamed:@"icon-light-pc-day"];
+    }
+    else if ([icon isEqualToString:@"partly-cloudy-night"])
+    {
+        view.image = [UIImage imageNamed:@"icon-light-pc-night"];
+    }
+    else if ([icon isEqualToString:@"cloudy"])
+    {
+        view.image = [UIImage imageNamed:@"icon-light-cloudy"];
+    }
+    else if ([icon isEqualToString:@"rain"])
+    {
+        view.image = [UIImage imageNamed:@"icon-light-rain-cloud"];
+    }
+    else if ([icon isEqualToString:@"thunderstorm"])
+    {
+        view.image = [UIImage imageNamed:@"icon-light-thunderstorm"];
+    }
+    else if ([icon isEqualToString:@"clear-night"])
+    {
+        view.image = [UIImage imageNamed:@"icon-light-moon"];
+    }
+    else if ([icon isEqualToString:@"hail"])
+    {
+        view.image = [UIImage imageNamed:@"icon-light-hail"];
+    }
+    else if ([icon isEqualToString:@"snow"])
+    {
+        view.image = [UIImage imageNamed:@"icon-light-snowflake"];
+    }
+    else if ([icon isEqualToString:@"tornado"])
+    {
+        view.image = [UIImage imageNamed:@"icon-light-tornado"];
+    }
+}
 
 
 
