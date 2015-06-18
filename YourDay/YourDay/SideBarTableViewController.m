@@ -32,7 +32,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.menuItems = @[@"title", @"current", @"forecast", @"todo", @"rss", @"tba1"];
+    self.menuItems = @[@"title", @"current", @"todo", @"rss", @"tba1"];
     
     
 }
@@ -139,12 +139,6 @@
         navController = segue.destinationViewController;
         RevealViewController *revealVC = (RevealViewController *)navController.topViewController;
         revealVC.navigationItem.title = @"Current Conditions";
-        
-    } else if ([segue.identifier isEqualToString:@"forecastPush"])
-    {
-        navController = segue.destinationViewController;
-        WeeklyWeatherViewController *weeklyVC = (WeeklyWeatherViewController *)navController.topViewController;
-        weeklyVC.navigationItem.title = @"7 - Day Forecast";
         
     } else if ([segue.identifier isEqualToString:@"todoPush"])
     {
