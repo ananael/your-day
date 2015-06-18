@@ -179,7 +179,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ueY-fe-MQo">
-                        <barButtonItem key="leftBarButtonItem" image="LeftRevealButton.png" id="sF7-2W-AsA">
+                        <barButtonItem key="leftBarButtonItem" image="nav-left-reveal.png" id="sF7-2W-AsA">
                             <color key="tintColor" red="0.23921568627450979" green="0.28627450980392155" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -408,7 +408,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1qr-pa-Irz">
-                        <barButtonItem key="leftBarButtonItem" image="LeftRevealButton.png" id="7BM-10-OvK">
+                        <barButtonItem key="leftBarButtonItem" image="nav-left-reveal.png" id="7BM-10-OvK">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -599,7 +599,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fFU-Gf-7Mm">
-                        <barButtonItem key="leftBarButtonItem" image="LeftRevealButton.png" id="F6U-1z-gCb">
+                        <barButtonItem key="leftBarButtonItem" image="nav-left-reveal.png" id="F6U-1z-gCb">
                             <color key="tintColor" red="0.23921568630000001" green="0.28627450980000002" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="93L-x8-eGp">
@@ -1415,7 +1415,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6IW-ZY-sYe">
-                        <barButtonItem key="leftBarButtonItem" image="LeftRevealButton.png" id="7lc-2W-M24">
+                        <barButtonItem key="leftBarButtonItem" image="nav-left-reveal.png" id="7lc-2W-M24">
                             <color key="tintColor" red="0.23921568630000001" green="0.28627450980000002" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -1573,9 +1573,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LeftRevealButton.png" width="44" height="44"/>
         <image name="WeatherDesign.png" width="403" height="403"/>
         <image name="icon-dark-tornado.png" width="112" height="112"/>
+        <image name="nav-left-reveal.png" width="44" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cGC-LA-qns"/>
