@@ -149,6 +149,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -160,13 +161,12 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     // Return the number of rows in the section.
-    //return [self.weatherDetailArray count];
+    
     return [self.summaryArray count];
 }
 
 -(NSString *)labelTextForRow:(NSInteger)row
 {
-    //return [self.weatherDetailArray objectAtIndex:row];
     return [self.summaryArray objectAtIndex:row];
 }
 
@@ -227,7 +227,8 @@
      
      cell.visibilityLabel.text = self.visibilityArray[indexPath.row];
      
-     [self.methods convertString:self.iconArray[indexPath.row] ToDarkIcon:cell.weatherIcon];
+     //"Style" choices for this method are: @"light", @"dark", @"black"
+     [self.methods convertWeatherType:self.iconArray[indexPath.row] ForView:cell.weatherIcon UsingIconStyle:@"black"];
      
      cell.dateLabel.text = self.dateArray[indexPath.row];
      cell.dateLabel.textColor = [UIColor blackColor];
@@ -253,7 +254,10 @@
          cell.precipLabel.text = [self.methods convertToPrecipProbability:self.resultsDictionary[@"currently"][@"precipType"] Probability:self.resultsDictionary[@"currently"][@"precipProbability"]];
          cell.windLabel.text = [self.methods convertToWindBearing:self.resultsDictionary[@"currently"][@"windBearing"] AndSpeed:self.resultsDictionary[@"currently"][@"windSpeed"]];
          cell.visibilityLabel.text = [self.methods convertToVisibilityLabel:self.resultsDictionary[@"currently"][@"visibility"]];
-         [self.methods convertString:self.resultsDictionary[@"currently"][@"icon"] ToLightIcon:cell.weatherIcon];
+        
+         //"Style" choices for this method are: @"light", @"dark", @"black"
+         [self.methods convertWeatherType:self.resultsDictionary[@"currently"][@"icon"] ForView:cell.weatherIcon UsingIconStyle:@"light"];
+         
          cell.dateLabel.textColor = [UIColor whiteColor];
      }
      

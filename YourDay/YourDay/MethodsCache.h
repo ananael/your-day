@@ -15,6 +15,7 @@
 -(void)buttonBorder:(NSArray *)array;
 -(void)buttonFillColor:(NSArray *)array;
 -(void)containerFillColor:(NSArray *)array;
+-(void)changeLabelText:(NSArray *)array ToColor:(UIColor *)color;
 -(void)createContainerBottomBorderWithDimensions:(UIView *)containerView
                                      andMainView:(UIView *)selfView;
 
@@ -35,6 +36,8 @@
              scaleHeight:(CGFloat)floatX
               scaleWidth:(CGFloat)floatY;
 
+-(void)transferHourlyData:(NSDictionary *)dict ForNumberKey:(NSString *)key ToArray:(NSMutableArray *)array;
+-(void)transferHourlyData:(NSDictionary *)dict ForStringKey:(NSString *)key ToArray:(NSMutableArray *)array;
 -(void) convertEpochTimeToHumanReadable:(NSTimeInterval)time;
 -(NSString *) convertDecimalToRoundedString:(NSNumber *)number;
 -(NSString *) convertToTemperature:(NSNumber *)number;
@@ -48,8 +51,8 @@
 -(NSString *) convertToWindBearing:(NSNumber *)number1 AndSpeed:(NSNumber *)number2;
 -(NSString *) convertToWindDirection:(NSNumber *)number;
 -(NSString *) convertToVisibilityLabel:(NSNumber *)number;
--(void) convertString:(NSString *)icon ToDarkIcon:(UIImageView *)view;
--(void) convertString:(NSString *)icon ToLightIcon:(UIImageView *)view;
+//-(void) convertWeatherType:(NSString *)string ForView:(UIImageView *)view UsingIconStyle:(NSString *)style;
+-(void) convertWeatherType:(NSString *)string ForView:(UIImageView *)view UsingIconStyle:(NSString *)style;
 
 
 

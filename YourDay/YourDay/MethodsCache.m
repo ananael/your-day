@@ -42,6 +42,14 @@
     }
 }
 
+-(void)changeLabelText:(NSArray *)array ToColor:(UIColor *)color
+{
+    for (UILabel *label in array)
+    {
+        label.textColor = color;
+    }
+}
+
 -(void)createContainerBottomBorderWithDimensions:(UIView *)containerView andMainView:(UIView *)selfView
 {
     CGFloat border = 2;
@@ -104,6 +112,29 @@
                                       kern:spacing
                                scaleHeight:floatX
                                 scaleWidth:floatY];
+    }
+}
+
+//NOTE: Method starts with the array[1]
+-(void)transferHourlyData:(NSDictionary *)dict ForNumberKey:(NSString *)key ToArray:(NSMutableArray *)array
+{
+    for (NSInteger i = 1; i < 25; i++)
+    {
+        NSNumber *eachItem;
+        eachItem = dict[@"hourly"][@"data"][i][key];
+        
+        [array addObject:eachItem];
+    }
+}
+
+-(void)transferHourlyData:(NSDictionary *)dict ForStringKey:(NSString *)key ToArray:(NSMutableArray *)array
+{
+    for (NSInteger i = 1; i < 25; i++)
+    {
+        NSNumber *eachItem;
+        eachItem = dict[@"hourly"][@"data"][i][key];
+        
+        [array addObject:eachItem];
     }
 }
 
@@ -295,94 +326,50 @@
     return direction;
 }
 
--(void) convertString:(NSString *)icon ToDarkIcon:(UIImageView *)view
+//"Style" choices for this method are: @"light", @"dark", @"black"
+-(void) convertWeatherType:(NSString *)string ForView:(UIImageView *)view UsingIconStyle:(NSString *)style
 {
-    if ([icon isEqualToString:@"clear-day"])
+    if ([string isEqualToString:@"clear-day"])
     {
-        view.image = [UIImage imageNamed:@"icon-dark-sunny"];
+        view.image = [UIImage imageNamed:[NSString stringWithFormat:@"icon-%@-sunny", style]];
     }
-    else if ([icon isEqualToString:@"partly-cloudy-day"])
+    else if ([string isEqualToString:@"partly-cloudy-day"])
     {
-        view.image = [UIImage imageNamed:@"icon-dark-pc-day"];
+        view.image = [UIImage imageNamed:[NSString stringWithFormat:@"icon-%@-pc-day", style]];
     }
-    else if ([icon isEqualToString:@"partly-cloudy-night"])
+    else if ([string isEqualToString:@"partly-cloudy-night"])
     {
-        view.image = [UIImage imageNamed:@"icon-dark-pc-night"];
+        view.image = [UIImage imageNamed:[NSString stringWithFormat:@"icon-%@-pc-night", style]];
     }
-    else if ([icon isEqualToString:@"cloudy"])
+    else if ([string isEqualToString:@"cloudy"])
     {
-        view.image = [UIImage imageNamed:@"icon-dark-cloudy"];
+        view.image = [UIImage imageNamed:[NSString stringWithFormat:@"icon-%@-cloudy", style]];
     }
-    else if ([icon isEqualToString:@"rain"])
+    else if ([string isEqualToString:@"rain"])
     {
-        view.image = [UIImage imageNamed:@"icon-dark-rain-cloud"];
+        view.image = [UIImage imageNamed:[NSString stringWithFormat:@"icon-%@-rain-cloud", style]];
     }
-    else if ([icon isEqualToString:@"thunderstorm"])
+    else if ([string isEqualToString:@"thunderstorm"])
     {
-        view.image = [UIImage imageNamed:@"icon-dark-thunderstorm"];
+        view.image = [UIImage imageNamed:[NSString stringWithFormat:@"icon-%@-thunderstorm", style]];
     }
-    else if ([icon isEqualToString:@"clear-night"])
+    else if ([string isEqualToString:@"clear-night"])
     {
-        view.image = [UIImage imageNamed:@"icon-dark-moon"];
+        view.image = [UIImage imageNamed:[NSString stringWithFormat:@"icon-%@-moon", style]];
     }
-    else if ([icon isEqualToString:@"hail"])
+    else if ([string isEqualToString:@"hail"])
     {
-        view.image = [UIImage imageNamed:@"icon-dark-hail"];
+        view.image = [UIImage imageNamed:[NSString stringWithFormat:@"icon-%@-hail", style]];
     }
-    else if ([icon isEqualToString:@"snow"])
+    else if ([string isEqualToString:@"snow"])
     {
-        view.image = [UIImage imageNamed:@"icon-dark-snowflake"];
+        view.image = [UIImage imageNamed:[NSString stringWithFormat:@"icon-%@-snowflake", style]];
     }
-    else if ([icon isEqualToString:@"tornado"])
+    else if ([string isEqualToString:@"tornado"])
     {
-        view.image = [UIImage imageNamed:@"icon-dark-tornado"];
+        view.image = [UIImage imageNamed:[NSString stringWithFormat:@"icon-%@-tornado", style]];
     }
 }
-
--(void) convertString:(NSString *)icon ToLightIcon:(UIImageView *)view
-{
-    if ([icon isEqualToString:@"clear-day"])
-    {
-        view.image = [UIImage imageNamed:@"icon-light-sunny"];
-    }
-    else if ([icon isEqualToString:@"partly-cloudy-day"])
-    {
-        view.image = [UIImage imageNamed:@"icon-light-pc-day"];
-    }
-    else if ([icon isEqualToString:@"partly-cloudy-night"])
-    {
-        view.image = [UIImage imageNamed:@"icon-light-pc-night"];
-    }
-    else if ([icon isEqualToString:@"cloudy"])
-    {
-        view.image = [UIImage imageNamed:@"icon-light-cloudy"];
-    }
-    else if ([icon isEqualToString:@"rain"])
-    {
-        view.image = [UIImage imageNamed:@"icon-light-rain-cloud"];
-    }
-    else if ([icon isEqualToString:@"thunderstorm"])
-    {
-        view.image = [UIImage imageNamed:@"icon-light-thunderstorm"];
-    }
-    else if ([icon isEqualToString:@"clear-night"])
-    {
-        view.image = [UIImage imageNamed:@"icon-light-moon"];
-    }
-    else if ([icon isEqualToString:@"hail"])
-    {
-        view.image = [UIImage imageNamed:@"icon-light-hail"];
-    }
-    else if ([icon isEqualToString:@"snow"])
-    {
-        view.image = [UIImage imageNamed:@"icon-light-snowflake"];
-    }
-    else if ([icon isEqualToString:@"tornado"])
-    {
-        view.image = [UIImage imageNamed:@"icon-light-tornado"];
-    }
-}
-
 
 
 

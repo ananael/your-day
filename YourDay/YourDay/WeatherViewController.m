@@ -97,20 +97,12 @@
         
     }
     
+    //Makes "containers" fill "clear"
+    [self.methods containerFillColor:[self containersArray]];
     
-    
-    // TODO: Make as method- "containersClearColor"
-    for (UIView *containers in [self containersArray])
-    {
-        containers.backgroundColor = [UIColor clearColor];
-    }
-    
-    //TODO: Make as method- "weatherPageBlue"
-    UIColor *navyFog = [UIColor colorWithRed:61.0/255 green:73.0/255 blue:96.0/255 alpha:1.0];
-    
-    self.currentTempLabel.textColor = navyFog;
-    self.feelsLabel.textColor = navyFog;
-    self.feelsLikeTempLabel.textColor = navyFog;
+    //Changes UILabel array text color
+    [self.methods changeLabelText:[self labelsArrayDark] ToColor:[self.methods navyFog]];
+    [self.methods changeLabelText:[self labelsArrayLight] ToColor:[UIColor whiteColor]];
     
     //Creates TOP and BOTTOM borders for scrollContainer
     CGFloat border = 1;
@@ -139,7 +131,7 @@
         timeBox.backgroundColor = [UIColor clearColor];
         
         UIImageView *hourlyIconBox = [[UIImageView alloc]initWithFrame:CGRectMake(2, 20, 36, 36)];
-        hourlyIconBox.backgroundColor = [UIColor clearColor];
+        hourlyIconBox.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.5];
         
         UILabel *weatherLabelBox = [[UILabel alloc]initWithFrame:CGRectMake(2, 58, 36, 20)];
         weatherLabelBox.backgroundColor = [UIColor clearColor];
@@ -198,7 +190,9 @@
             
             NSLog(@"Temp: %@ \n Current: %@ \n The Week: %@ \n Lat & Long: %f , %f", self.resultsDictionary[@"currently"][@"temperature"], self.resultsDictionary[@"currently"], self.resultsDictionary[@"daily"][@"data"], self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
             
-            [self.methods convertString:self.resultsDictionary[@"currently"][@"icon"] ToDarkIcon:self.currentWeatherIcon];
+            //"Style" choices for this method are: @"light", @"dark", @"black"
+            [self.methods convertWeatherType:self.resultsDictionary[@"currently"][@"icon"] ForView:self.currentWeatherIcon UsingIconStyle:@"dark"];
+            
             self.hiTempLabel.text = [self.methods convertToHiTemperature:self.resultsDictionary[@"daily"][@"data"][0][@"apparentTemperatureMax"]];
             self.weatherDescriptionLabel.text = self.resultsDictionary[@"currently"][@"summary"];
             self.currentTempLabel.text = [self.methods convertToTemperature:self.resultsDictionary[@"currently"][@"temperature"]];
@@ -207,13 +201,7 @@
             
             //Pulls in the time starting with the array[1]
             //Time for the hour after the current hour
-            for (NSInteger i = 1; i < 25; i++)
-            {
-                NSNumber *eachHour;
-                eachHour = self.resultsDictionary[@"hourly"][@"data"][i][@"time"];
-                
-                [self.hours addObject:eachHour];
-            }
+            [self.methods transferHourlyData:self.resultsDictionary ForNumberKey:@"time" ToArray:self.hours];
             
             for (NSInteger i=0; i<[self.timeArray count]; i++)
             {
@@ -229,13 +217,7 @@
             
             //Pulls in the temperature starting with the array[1]
             //Temperature to match the hour
-            for (NSInteger i = 1; i < 25; i++)
-            {
-                NSNumber *hourlyTemp;
-                hourlyTemp = self.resultsDictionary[@"hourly"][@"data"][i][@"temperature"];
-                
-                [self.temperatures addObject:hourlyTemp];
-            }
+            [self.methods transferHourlyData:self.resultsDictionary ForNumberKey:@"temperature" ToArray:self.temperatures];
             
             for (NSInteger i=0; i<[self.temperatures count]; i++)
             {
@@ -249,17 +231,14 @@
 
             }
             
-            for (NSInteger i = 1; i < 25; i++)
-            {
-                NSString *hourlyIcon;
-                hourlyIcon = self.resultsDictionary[@"hourly"][@"data"][i][@"icon"];
-                
-                [self.icons addObject:hourlyIcon];
-            }
+            //Pulls in the icon-string starting with the array[1]
+            //Icon-string to match the hour
+            [self.methods transferHourlyData:self.resultsDictionary ForStringKey:@"icon" ToArray:self.icons];
             
             for (NSInteger i=0; i<[self.icons count]; i++)
             {
-                [self.methods convertString:[self.icons objectAtIndex:i] ToLightIcon:[self.iconArray objectAtIndex:i]];
+                //"Style" choices for this method are: @"light", @"dark", @"black"
+                [self.methods convertWeatherType:[self.icons objectAtIndex:i] ForView:[self.iconArray objectAtIndex:i] UsingIconStyle:@"dark"];
             }
             
             
@@ -273,9 +252,6 @@
                                    }];
     
     
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -287,6 +263,18 @@
 {
     NSArray *containerViews = @[self.mainDesignContainer, self.container1, self.container2, self.container3, self.scrollContainer, self.scrollContent, self.buttonContainer];
     return containerViews;
+}
+
+- (NSArray *)labelsArrayDark
+{
+    NSArray *labelsArray = @[self.currentTempLabel, self.feelsLabel, self.feelsLikeTempLabel];
+    return labelsArray;
+}
+
+- (NSArray *)labelsArrayLight
+{
+    NSArray *labelsArray = @[self.hiTempLabel, self.weatherDescriptionLabel, self.loTempLabel];
+    return labelsArray;
 }
 
 //TODO: Remove this method
@@ -313,10 +301,6 @@
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     CLLocation *crnLoc = [locations lastObject];
-//    self.latitude.text = [NSString stringWithFormat:@"%.8f",crnLoc.coordinate.latitude];
-//    self.longitude.text = [NSString stringWithFormat:@"%.8f",crnLoc.coordinate.longitude];
-//    self.altitude.text = [NSString stringWithFormat:@"%.0f m",crnLoc.altitude];
-//    self.speed.text = [NSString stringWithFormat:@"%.1f m/s", crnLoc.speed];
     
     [self.locationManager stopUpdatingLocation];
     
