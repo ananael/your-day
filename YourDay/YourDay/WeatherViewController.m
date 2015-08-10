@@ -32,7 +32,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *container3;
 @property (weak, nonatomic) IBOutlet UILabel *loTempLabel;
-@property (weak, nonatomic) IBOutlet UILabel *feelsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *feelsLikeTempLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *scrollContainer;
@@ -103,6 +102,19 @@
     //Changes UILabel array text color
     [self.methods changeLabelText:[self labelsArrayDark] ToColor:[self.methods navyFog]];
     [self.methods changeLabelText:[self labelsArrayLight] ToColor:[UIColor whiteColor]];
+    
+    //UILabel font sizes per iPhone model
+    if (UIScreen.mainScreen.bounds.size.height == 480) {
+        // iPhone 4
+        self.hiTempLabel.font = [UIFont fontWithName:@"Thonburi-Bold" size:14];
+        self.loTempLabel.font = [UIFont fontWithName:@"Thonburi-Bold" size:14];
+        self.currentTempLabel.font = [UIFont fontWithName:@"Thonburi-Bold" size:26];
+        self.weatherDescriptionLabel.font = [UIFont fontWithName:@"Thonburi-Bold" size:14];
+        self.feelsLikeTempLabel.font = [UIFont fontWithName:@"Thonburi-Bold" size:9];
+    } else if (UIScreen.mainScreen.bounds.size.height == 568) {
+        // IPhone 5
+        self.feelsLikeTempLabel.font = [UIFont fontWithName:@"Thonburi-Bold" size:14];
+    }
     
     //Creates TOP and BOTTOM borders for scrollContainer
     CGFloat border = 1;
@@ -197,7 +209,8 @@
             self.weatherDescriptionLabel.text = self.resultsDictionary[@"currently"][@"summary"];
             self.currentTempLabel.text = [self.methods convertToTemperature:self.resultsDictionary[@"currently"][@"temperature"]];
             self.loTempLabel.text = [self.methods convertToLoTemperature:self.resultsDictionary[@"daily"][@"data"][0][@"apparentTemperatureMin"]];
-            self.feelsLikeTempLabel.text = [self.methods convertToTemperature:self.resultsDictionary[@"currently"][@"apparentTemperature"]];
+            self.feelsLikeTempLabel.text = [NSString stringWithFormat:@"feels: %@", [self.methods convertToTemperature:self.resultsDictionary[@"currently"][@"apparentTemperature"]]];
+            
             
             //Pulls in the time starting with the array[1]
             //Time for the hour after the current hour
@@ -267,7 +280,7 @@
 
 - (NSArray *)labelsArrayDark
 {
-    NSArray *labelsArray = @[self.currentTempLabel, self.feelsLabel, self.feelsLikeTempLabel];
+    NSArray *labelsArray = @[self.currentTempLabel, self.feelsLikeTempLabel];
     return labelsArray;
 }
 
