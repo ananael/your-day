@@ -94,7 +94,7 @@
     
     label.textAlignment = NSTextAlignmentCenter;
     label.font = [UIFont fontWithName:@"Helvetica-Bold" size:18];
-    label.textColor = [self navyFog];
+    label.textColor = [UIColor whiteColor];
     label.backgroundColor = [UIColor clearColor];
     
     [self attributedString:string forLabel:label withKern:10.0f];

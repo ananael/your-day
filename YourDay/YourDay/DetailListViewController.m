@@ -15,6 +15,7 @@
 @interface DetailListViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *backgroundImage;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
 @property (strong, nonatomic) ListsDataStore *store;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -33,6 +34,11 @@
     self.store = [ListsDataStore sharedListsDataStore];
     
     self.toDoItems = [self.toDoList.item allObjects];
+    
+    //Makes tableview transparent in order to see background image
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.backgroundView.image = [UIImage imageNamed:@"paisley sky jade"];
+    self.backgroundView.alpha = 0.6;
     
 }
 
@@ -64,6 +70,9 @@
      
      Task *eachTask = self.toDoItems[indexPath.row];
      cell.textLabel.text = eachTask.item;
+     
+     //Makes each cell transparent to see background
+     cell.backgroundColor = [UIColor clearColor];
      
      cell.userInteractionEnabled = NO;
      

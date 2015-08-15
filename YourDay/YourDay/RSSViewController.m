@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet UIView *backgroundImage;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
 @property (weak, nonatomic) IBOutlet UIView *container1;
 @property (weak, nonatomic) IBOutlet UIButton *worldButton;
 @property (weak, nonatomic) IBOutlet UIButton *technologyButton;
@@ -111,7 +112,8 @@
     self.businessImage.image = [UIImage imageNamed:@"business"];
     self.entertainmentImage.image = [UIImage imageNamed:@"theater masks"];
     
-    self.backgroundImage.backgroundColor = [UIColor colorWithRed:167.0/255.0 green:205.0/255.0 blue:255.0/255.0 alpha:1.0];
+    self.backgroundView.image = [UIImage imageNamed:@"paisley sky lapis"];
+    self.backgroundView.alpha = 0.5;
     
     self.methods = [MethodsCache new];
     
@@ -124,6 +126,9 @@
     [self.methods buttonBorder:[self closeButtonsArray]];
     [self.methods buttonFillColor:[self closeButtonsArray]];
     [self.methods feedButtonCenterText:[self feedButtonsArray]];
+    
+    self.tableView.backgroundColor = [UIColor clearColor];
+    
     
     NSString *closeButtonText = @"close";
     [self.methods formatCloseButton:[self closeButtonsArray] withString:closeButtonText kern:10.0 scaleHeight:1.0 scaleWidth:1.0];
@@ -192,6 +197,10 @@
  // Configure the cell...
      
      cell.textLabel.text = [[self.feeds objectAtIndex:indexPath.row]objectForKey:@"title"];
+     
+     cell.textLabel.textColor = [UIColor whiteColor];
+     
+     cell.backgroundColor = [UIColor colorWithRed:0.0/255 green:63.0/255 blue:111.0/255 alpha:0.2];
  
      return cell;
  }
@@ -420,21 +429,6 @@
     self.businessContainer.hidden = YES;
     self.entertainmentContainer.hidden = YES;
     
-//    NSArray *containers = @[self.worldContainer, self.sciTechContainer, self.businessContainer, self.entertainmentContainer];
-//    for (UIView *container in containers)
-//    {
-//        [UIView transitionFromView:container
-//                            toView:self.container1
-//                          duration:1.0
-//                           options:UIViewAnimationOptionTransitionCrossDissolve
-//                        completion:^(BOOL finished) {
-//                            self.container1.hidden = NO;
-//                            self.worldContainer.hidden = YES;
-//                            self.sciTechContainer.hidden = YES;
-//                            self.businessContainer.hidden = YES;
-//                            self.entertainmentContainer.hidden = YES;
-//                        }];
-//    }
     
     
     

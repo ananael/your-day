@@ -53,7 +53,8 @@
     
     self.navigationController.navigationBar.translucent = NO;
     
-    self.backgroundImage.image = [UIImage imageNamed:@"Earth-2048h-inverted.jpg"];
+    self.backgroundImage.image = [UIImage imageNamed:@"paisley sky citrine"];
+    self.backgroundImage.alpha = 0.8;
     
     self.cellPrototype = [self.tableView dequeueReusableCellWithIdentifier:@"weatherCell"];
     

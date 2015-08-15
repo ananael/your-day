@@ -29,6 +29,14 @@
 		D20F07D71AD809800095504E /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = D20F07D61AD809800095504E /* Task.m */; };
 		D20F07DA1AD809810095504E /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = D20F07D91AD809810095504E /* List.m */; };
 		D20F07DE1AD80A040095504E /* ListsDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D20F07DD1AD80A040095504E /* ListsDataStore.m */; };
+		D211E1E31B7B109F00B30000 /* mainDesign@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = D211E1E11B7B109F00B30000 /* mainDesign@1x.png */; };
+		D211E1E41B7B109F00B30000 /* mainDesign@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D211E1E21B7B109F00B30000 /* mainDesign@2x.png */; };
+		D211E1F71B7E3DB800B30000 /* paisley sky citrine@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = D211E1F11B7E3DB800B30000 /* paisley sky citrine@1x.png */; };
+		D211E1F81B7E3DB800B30000 /* paisley sky citrine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D211E1F21B7E3DB800B30000 /* paisley sky citrine@2x.png */; };
+		D211E1F91B7E3DB800B30000 /* paisley sky jade@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = D211E1F31B7E3DB800B30000 /* paisley sky jade@1x.png */; };
+		D211E1FA1B7E3DB800B30000 /* paisley sky jade@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D211E1F41B7E3DB800B30000 /* paisley sky jade@2x.png */; };
+		D211E1FF1B7E3EC400B30000 /* paisley sky lapis@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = D211E1FD1B7E3EC400B30000 /* paisley sky lapis@1x.png */; };
+		D211E2001B7E3EC400B30000 /* paisley sky lapis@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D211E1FE1B7E3EC400B30000 /* paisley sky lapis@2x.png */; };
 		D2196F8F1AEFE0DD00CD0A4A /* RSSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2196F8E1AEFE0DD00CD0A4A /* RSSDetailViewController.m */; };
 		D21FA6061B13F529002543F3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D21FA6051B13F529002543F3 /* CoreLocation.framework */; };
 		D253D6681B63F0E3002A617A /* ItunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = D253D65C1B63F0E3002A617A /* ItunesArtwork.png */; };
@@ -140,6 +148,14 @@
 		D20F07D91AD809810095504E /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
 		D20F07DC1AD80A040095504E /* ListsDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListsDataStore.h; sourceTree = "<group>"; };
 		D20F07DD1AD80A040095504E /* ListsDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsDataStore.m; sourceTree = "<group>"; };
+		D211E1E11B7B109F00B30000 /* mainDesign@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainDesign@1x.png"; sourceTree = "<group>"; };
+		D211E1E21B7B109F00B30000 /* mainDesign@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainDesign@2x.png"; sourceTree = "<group>"; };
+		D211E1F11B7E3DB800B30000 /* paisley sky citrine@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paisley sky citrine@1x.png"; sourceTree = "<group>"; };
+		D211E1F21B7E3DB800B30000 /* paisley sky citrine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paisley sky citrine@2x.png"; sourceTree = "<group>"; };
+		D211E1F31B7E3DB800B30000 /* paisley sky jade@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paisley sky jade@1x.png"; sourceTree = "<group>"; };
+		D211E1F41B7E3DB800B30000 /* paisley sky jade@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paisley sky jade@2x.png"; sourceTree = "<group>"; };
+		D211E1FD1B7E3EC400B30000 /* paisley sky lapis@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paisley sky lapis@1x.png"; sourceTree = "<group>"; };
+		D211E1FE1B7E3EC400B30000 /* paisley sky lapis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paisley sky lapis@2x.png"; sourceTree = "<group>"; };
 		D2196F8D1AEFE0DD00CD0A4A /* RSSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSDetailViewController.h; sourceTree = "<group>"; };
 		D2196F8E1AEFE0DD00CD0A4A /* RSSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSDetailViewController.m; sourceTree = "<group>"; };
 		D21FA6051B13F529002543F3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -299,6 +315,14 @@
 				D2A7AC941B4108180050BC78 /* atmosphere_blues.png */,
 				D204CB7D1AC3779200C149BD /* Earth-2048h.jpg */,
 				D2B923BC1B337170005448DF /* nav-left-reveal.png */,
+				D211E1E11B7B109F00B30000 /* mainDesign@1x.png */,
+				D211E1E21B7B109F00B30000 /* mainDesign@2x.png */,
+				D211E1F11B7E3DB800B30000 /* paisley sky citrine@1x.png */,
+				D211E1F21B7E3DB800B30000 /* paisley sky citrine@2x.png */,
+				D211E1F31B7E3DB800B30000 /* paisley sky jade@1x.png */,
+				D211E1F41B7E3DB800B30000 /* paisley sky jade@2x.png */,
+				D211E1FD1B7E3EC400B30000 /* paisley sky lapis@1x.png */,
+				D211E1FE1B7E3EC400B30000 /* paisley sky lapis@2x.png */,
 				D204CB7E1AC3779200C149BD /* WeatherDesign@1x.png */,
 				D204CB7F1AC3779200C149BD /* WeatherDesign@2x.png */,
 			);
@@ -586,10 +610,15 @@
 				D253D66B1B63F0E3002A617A /* yourDay-29@2x.png in Resources */,
 				D2B9239E1B334B0D005448DF /* icon-dark-rain-cloud.png in Resources */,
 				D204CB811AC3779200C149BD /* Earth-2048h.jpg in Resources */,
+				D211E1F71B7E3DB800B30000 /* paisley sky citrine@1x.png in Resources */,
+				D211E2001B7E3EC400B30000 /* paisley sky lapis@2x.png in Resources */,
 				D2FEEB331AF41C9700DE3336 /* world news.png in Resources */,
+				D211E1F91B7E3DB800B30000 /* paisley sky jade@1x.png in Resources */,
 				D2F844F31B349C140086BB42 /* icon-black-sunny.png in Resources */,
+				D211E1E41B7B109F00B30000 /* mainDesign@2x.png in Resources */,
 				D2F844F01B349C140086BB42 /* icon-black-rain-cloud.png in Resources */,
 				D2B923B81B335AA6005448DF /* icon-light-thunderstorm.png in Resources */,
+				D211E1FA1B7E3DB800B30000 /* paisley sky jade@2x.png in Resources */,
 				D2F844F41B349C140086BB42 /* icon-black-thunderstorm.png in Resources */,
 				D2B9239B1B334B0D005448DF /* icon-dark-moon.png in Resources */,
 				D253D66F1B63F0E3002A617A /* yourDay-40@3x.png in Resources */,
@@ -618,7 +647,10 @@
 				D2B923B41B335AA6005448DF /* icon-light-rain-cloud.png in Resources */,
 				D253D6691B63F0E3002A617A /* ItunesArtwork@2x.png in Resources */,
 				D2B923B21B335AA6005448DF /* icon-light-pc-day.png in Resources */,
+				D211E1E31B7B109F00B30000 /* mainDesign@1x.png in Resources */,
 				D204CB601AC3626400C149BD /* Images.xcassets in Resources */,
+				D211E1F81B7E3DB800B30000 /* paisley sky citrine@2x.png in Resources */,
+				D211E1FF1B7E3EC400B30000 /* paisley sky lapis@1x.png in Resources */,
 				D2FEEB231AF2782C00DE3336 /* theater masks.png in Resources */,
 				D2B9239A1B334B0D005448DF /* icon-dark-hail.png in Resources */,
 				D2F844F11B349C140086BB42 /* icon-black-snowfall.png in Resources */,

@@ -69,7 +69,8 @@
     [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
     self.navigationController.navigationBar.translucent = NO;
     
-    self.backgroundView.image = [UIImage imageNamed:@"Earth-2048h.jpg"];
+    self.backgroundView.image = [UIImage imageNamed:@"paisley sky lapis"];
+    self.backgroundView.alpha = 0.8;
     
     self.scrollView.showsHorizontalScrollIndicator = NO;
     
@@ -108,7 +109,7 @@
         // iPhone 4
         self.hiTempLabel.font = [UIFont fontWithName:@"Thonburi-Bold" size:14];
         self.loTempLabel.font = [UIFont fontWithName:@"Thonburi-Bold" size:14];
-        self.currentTempLabel.font = [UIFont fontWithName:@"Thonburi-Bold" size:26];
+        self.currentTempLabel.font = [UIFont fontWithName:@"Thonburi-Bold" size:24];
         self.weatherDescriptionLabel.font = [UIFont fontWithName:@"Thonburi-Bold" size:14];
         self.feelsLikeTempLabel.font = [UIFont fontWithName:@"Thonburi-Bold" size:9];
     } else if (UIScreen.mainScreen.bounds.size.height == 568) {
@@ -143,7 +144,7 @@
         timeBox.backgroundColor = [UIColor clearColor];
         
         UIImageView *hourlyIconBox = [[UIImageView alloc]initWithFrame:CGRectMake(2, 20, 36, 36)];
-        hourlyIconBox.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.5];
+        hourlyIconBox.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.6];
         
         UILabel *weatherLabelBox = [[UILabel alloc]initWithFrame:CGRectMake(2, 58, 36, 20)];
         weatherLabelBox.backgroundColor = [UIColor clearColor];

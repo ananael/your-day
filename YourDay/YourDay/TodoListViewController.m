@@ -16,6 +16,8 @@
 @interface TodoListViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *backgroundImage;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) ListsDataStore *store;
@@ -36,6 +38,12 @@
     self.tableView.dataSource = self;
     
     self.navigationController.navigationBar.translucent = NO;
+    
+    //Makes tableview transparent in order to see background image
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.backgroundView.image = [UIImage imageNamed:@"paisley sky jade"];
+    self.backgroundView.alpha = 0.6;
+    
     
     //Implements the slide-out view controller
     SWRevealViewController *revealVC = self.revealViewController;
@@ -109,6 +117,9 @@
      
      List *eachList = self.fetchedResultsController.fetchedObjects[indexPath.row];
      cell.textLabel.text = eachList.listName;
+     
+     //Makes each cell transparent to see background
+     cell.backgroundColor = [UIColor clearColor];
  
      return cell;
      

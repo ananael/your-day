@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="acF-uD-JGP" userLabel="backgroundImage">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="acF-uD-JGP" userLabel="backgroundImage">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p22-1H-Auc" userLabel="topContainer">
@@ -27,7 +27,7 @@
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lx3-CN-MuB" userLabel="mainDesignContainer">
                                         <rect key="frame" x="150" y="0.0" width="300" height="300"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="WeatherDesign.png" translatesAutoresizingMaskIntoConstraints="NO" id="e8t-IY-3lR">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="mainDesign.png" translatesAutoresizingMaskIntoConstraints="NO" id="e8t-IY-3lR">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yNd-Pm-VDp" userLabel="container1">
@@ -119,7 +119,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="mIV-5b-880" secondAttribute="trailing" id="8bp-ML-iR8"/>
                                                     <constraint firstAttribute="bottom" secondItem="FDM-c7-JBD" secondAttribute="bottom" constant="15" id="Ktr-95-fzY"/>
                                                     <constraint firstItem="mIV-5b-880" firstAttribute="top" secondItem="aFa-3c-lsa" secondAttribute="top" id="hil-kc-CP4"/>
-                                                    <constraint firstItem="FDM-c7-JBD" firstAttribute="top" secondItem="mIV-5b-880" secondAttribute="bottom" constant="20" id="kHI-WH-19e"/>
+                                                    <constraint firstItem="FDM-c7-JBD" firstAttribute="top" secondItem="mIV-5b-880" secondAttribute="bottom" constant="15" id="kHI-WH-19e"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -274,7 +274,7 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eP1-aN-UOD" userLabel="backgroundImage">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eP1-aN-UOD" userLabel="backgroundImage">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DbQ-mR-pNZ">
@@ -560,20 +560,6 @@
                                     <segue destination="PLh-Xj-ycn" kind="custom" identifier="rssPush" customClass="SWRevealViewControllerSeguePushController" id="zyM-B7-DEx"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tba1" id="02C-cu-Rja">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="02C-cu-Rja" id="uDb-jP-jCA">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TBA 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFn-nN-1ko">
-                                            <rect key="frame" x="20" y="2" width="200" height="40"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Jve-HR-bKP" id="reG-dN-uup"/>
@@ -621,7 +607,18 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWm-qv-cm9" userLabel="backgroundImage">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sgi-Os-bgB" userLabel="backgroundView">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Sgi-Os-bgB" firstAttribute="leading" secondItem="EWm-qv-cm9" secondAttribute="leading" id="KYD-eG-hub"/>
+                                    <constraint firstAttribute="trailing" secondItem="Sgi-Os-bgB" secondAttribute="trailing" id="mQk-52-1xZ"/>
+                                    <constraint firstItem="Sgi-Os-bgB" firstAttribute="top" secondItem="EWm-qv-cm9" secondAttribute="top" id="mmd-4r-y8m"/>
+                                    <constraint firstAttribute="bottom" secondItem="Sgi-Os-bgB" secondAttribute="bottom" id="zas-JX-iKK"/>
+                                </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4Ix-Op-o1W">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -663,6 +660,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backgroundImage" destination="EWm-qv-cm9" id="WJ1-rY-RaR"/>
+                        <outlet property="backgroundView" destination="Sgi-Os-bgB" id="2Td-uT-WcC"/>
                         <outlet property="sidebarButton" destination="F6U-1z-gCb" id="poh-0O-4RO"/>
                         <outlet property="tableView" destination="4Ix-Op-o1W" id="9Aa-Sl-Kks"/>
                     </connections>
@@ -783,9 +781,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKD-gt-Aeb">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKD-gt-Aeb" userLabel="background container">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qF9-on-9Ay" userLabel="backgroundView">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qF9-on-9Ay" secondAttribute="trailing" id="cfA-XB-LP9"/>
+                                    <constraint firstItem="qF9-on-9Ay" firstAttribute="leading" secondItem="tKD-gt-Aeb" secondAttribute="leading" id="fst-sO-J2g"/>
+                                    <constraint firstAttribute="bottom" secondItem="qF9-on-9Ay" secondAttribute="bottom" id="qc1-IG-5cB"/>
+                                    <constraint firstItem="qF9-on-9Ay" firstAttribute="top" secondItem="tKD-gt-Aeb" secondAttribute="top" id="zmF-qp-eUc"/>
+                                </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="N2t-zQ-NBu">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -814,6 +823,7 @@
                     </view>
                     <connections>
                         <outlet property="backgroundImage" destination="tKD-gt-Aeb" id="VtS-hG-aL2"/>
+                        <outlet property="backgroundView" destination="qF9-on-9Ay" id="Pb9-B8-xfW"/>
                         <outlet property="tableView" destination="N2t-zQ-NBu" id="mcB-fU-ccq"/>
                     </connections>
                 </viewController>
@@ -835,6 +845,18 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sw8-tf-yvZ" userLabel="backgroundImage">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zhg-NT-oaf">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Zhg-NT-oaf" secondAttribute="bottom" id="MA6-Sv-Wow"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zhg-NT-oaf" secondAttribute="trailing" id="Qey-lf-wqA"/>
+                                    <constraint firstItem="Zhg-NT-oaf" firstAttribute="top" secondItem="sw8-tf-yvZ" secondAttribute="top" id="SBT-Al-L6R"/>
+                                    <constraint firstItem="Zhg-NT-oaf" firstAttribute="leading" secondItem="sw8-tf-yvZ" secondAttribute="leading" id="SJL-dI-FnR"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pY8-mn-dtt" userLabel="entertainmentContainer">
                                 <rect key="frame" x="0.0" y="64" width="600" height="140"/>
@@ -1474,6 +1496,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backgroundImage" destination="sw8-tf-yvZ" id="MUu-BY-ryn"/>
+                        <outlet property="backgroundView" destination="Zhg-NT-oaf" id="DF9-j5-bxm"/>
                         <outlet property="bbcBusinessButton" destination="qoj-Xt-8pO" id="iDT-YP-ESo"/>
                         <outlet property="bbcEntertainmentButton" destination="mcb-Fc-ph9" id="tec-Q9-Yi8"/>
                         <outlet property="bbcTechButton" destination="oX7-1r-bdD" id="CDK-ps-Kux"/>
@@ -1626,8 +1649,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="WeatherDesign.png" width="403" height="403"/>
         <image name="icon-dark-tornado.png" width="112" height="112"/>
+        <image name="mainDesign.png" width="300" height="300"/>
         <image name="nav-left-reveal.png" width="44" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
