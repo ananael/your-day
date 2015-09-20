@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hjT-WE-iMZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hjT-WE-iMZ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -1265,12 +1265,12 @@
                                             <constraint firstAttribute="height" constant="50" id="yvu-gK-JJb"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                        <state key="normal" title="USAToday Top Stories">
+                                        <state key="normal" title="Huffington World News">
                                             <color key="titleColor" red="0.23921568630000001" green="0.28627450980000002" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="usaTodayWorldTapped:" destination="1sz-NJ-Orb" eventType="touchUpInside" id="jbB-5K-w6K"/>
+                                            <action selector="huffingtonWorldTapped:" destination="1sz-NJ-Orb" eventType="touchUpInside" id="CtD-oe-NIN"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxh-6j-5gK" userLabel="closeWorldButton">
@@ -1516,6 +1516,7 @@
                         <outlet property="forbesBusinessButton" destination="Qiz-U3-9ad" id="EK1-18-bTs"/>
                         <outlet property="hrEntertainmentBoxOfficeButton" destination="Th6-FZ-rvf" id="6UT-lc-ILC"/>
                         <outlet property="hrEntertainmentNewsButton" destination="ukv-eJ-eug" id="dn1-rL-vZg"/>
+                        <outlet property="huffingtonWorldButton" destination="plt-0Q-HQy" id="lvw-4P-E7L"/>
                         <outlet property="nasaSciButton" destination="r9o-Xd-UPA" id="pmU-qT-vtO"/>
                         <outlet property="reutersBusinessButton" destination="heR-UG-UCg" id="1dI-32-LpF"/>
                         <outlet property="reutersEntertainmentButton" destination="POi-JS-e4V" id="l31-aN-WPu"/>
@@ -1529,7 +1530,6 @@
                         <outlet property="technologyButton" destination="eLK-8c-oPv" id="y9k-yU-bhx"/>
                         <outlet property="techworldButton" destination="Yqg-UF-Kdf" id="0TH-cg-Hc6"/>
                         <outlet property="usaNewsWorldButton" destination="w8U-kH-iRv" id="XzI-bW-sjs"/>
-                        <outlet property="usaTodayWorldButton" destination="plt-0Q-HQy" id="ixy-Ye-pJy"/>
                         <outlet property="wiredBusinessButton" destination="Yrr-A7-p1n" id="uio-mb-Imd"/>
                         <outlet property="worldButton" destination="FWt-SW-RI9" id="588-Ct-6ae"/>
                         <outlet property="worldContainer" destination="afE-Gr-7hp" id="7rb-tg-NFc"/>

@@ -15,7 +15,7 @@ extern NSString *const FORECAST_API_KEY;
 extern NSString *const BBC_WORLD_URL;
 extern NSString *const REUTERS_WORLD_URL;
 extern NSString *const USA_NEWS_URL;
-extern NSString *const USA_TODAY_TOP_URL;
+extern NSString *const HUFF_WORLD_POST_URL;
 
 extern NSString *const BBC_TECH_URL;
 extern NSString *const NASA_SCIENCE_URL;

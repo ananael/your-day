@@ -15,7 +15,7 @@ NSString *const FORECAST_API_KEY = @"03bf29650e4e5e586b9d214d50322aae";
 NSString *const BBC_WORLD_URL = @"http://feeds.bbci.co.uk/news/world/rss.xml";
 NSString *const REUTERS_WORLD_URL = @"http://feeds.reuters.com/Reuters/worldNews";
 NSString *const USA_NEWS_URL = @"http://www.usnews.com/rss/news";
-NSString *const USA_TODAY_TOP_URL = @"http://rssfeeds.usatoday.com/usatoday-NewsTopStories";
+NSString *const HUFF_WORLD_POST_URL = @"http://www.huffingtonpost.com/feeds/verticals/world/index.xml";
 
 NSString *const BBC_TECH_URL = @"http://feeds.bbci.co.uk/news/technology/rss.xml";
 NSString *const NASA_SCIENCE_URL = @"http://www.nasa.gov/rss/image_of_the_day.rss";

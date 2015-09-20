@@ -32,7 +32,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.tableView.backgroundColor = [UIColor colorWithRed:213.0/255 green:233.0/255 blue:247.0/255 alpha:0.9];
+    self.tableView.backgroundColor = [UIColor colorWithRed:213.0/255 green:233.0/255 blue:247.0/255 alpha:0.7];
     
     self.menuItems = @[@"title", @"current", @"todo", @"rss"];
     

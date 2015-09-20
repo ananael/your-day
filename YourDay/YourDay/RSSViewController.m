@@ -31,7 +31,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *bbcWorldButton;
 @property (weak, nonatomic) IBOutlet UIButton *reutersWorldButton;
 @property (weak, nonatomic) IBOutlet UIButton *usaNewsWorldButton;
-@property (weak, nonatomic) IBOutlet UIButton *usaTodayWorldButton;
+@property (weak, nonatomic) IBOutlet UIButton *huffingtonWorldButton;
 @property (weak, nonatomic) IBOutlet UIButton *closeWorldButton;
 
 @property (weak, nonatomic) IBOutlet UIView *sciTechContainer;
@@ -75,7 +75,7 @@
 - (IBAction)bbcWorldTapped:(id)sender;
 - (IBAction)reutersWorldTapped:(id)sender;
 - (IBAction)usaNewsWorldTapped:(id)sender;
-- (IBAction)usaTodayWorldTapped:(id)sender;
+- (IBAction)huffingtonWorldTapped:(id)sender;
 - (IBAction)closeTapped:(id)sender;
 
 - (IBAction)bbcTechTapped:(id)sender;
@@ -162,7 +162,7 @@
 
 -(NSArray *)feedButtonsArray
 {
-    NSArray *feedButtons = @[self.bbcWorldButton, self.reutersWorldButton, self.usaNewsWorldButton, self.usaTodayWorldButton, self.bbcTechButton, self.nasaSciButton, self.reutersTechButton, self.techworldButton, self.bbcBusinessButton, self.forbesBusinessButton, self.reutersBusinessButton, self.wiredBusinessButton, self.bbcEntertainmentButton, self.hrEntertainmentNewsButton, self.hrEntertainmentBoxOfficeButton, self.reutersEntertainmentButton];
+    NSArray *feedButtons = @[self.bbcWorldButton, self.reutersWorldButton, self.usaNewsWorldButton, self.huffingtonWorldButton, self.bbcTechButton, self.nasaSciButton, self.reutersTechButton, self.techworldButton, self.bbcBusinessButton, self.forbesBusinessButton, self.reutersBusinessButton, self.wiredBusinessButton, self.bbcEntertainmentButton, self.hrEntertainmentNewsButton, self.hrEntertainmentBoxOfficeButton, self.reutersEntertainmentButton];
     
     return feedButtons;
 }
@@ -329,11 +329,11 @@
     self.rssLabel.text = @"USANews & World Report Headlines";
 }
 
-- (IBAction)usaTodayWorldTapped:(id)sender
+- (IBAction)huffingtonWorldTapped:(id)sender
 {
-    [self LoadRSSFeedWithURLString:USA_TODAY_TOP_URL];
+    [self LoadRSSFeedWithURLString:HUFF_WORLD_POST_URL];
     
-    self.rssLabel.text = @"USAToday Top Stories";
+    self.rssLabel.text = @"Huffington World Headlines";
 }
 
 - (IBAction)bbcTechTapped:(id)sender
