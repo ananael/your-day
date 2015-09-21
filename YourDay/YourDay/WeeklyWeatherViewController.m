@@ -53,6 +53,8 @@
     
     self.navigationController.navigationBar.translucent = NO;
     
+    self.tableView.backgroundColor = [UIColor clearColor];
+    
     self.backgroundImage.image = [UIImage imageNamed:@"paisley sky citrine"];
     self.backgroundImage.alpha = 0.8;
     

@@ -76,6 +76,7 @@
 		D2B923B81B335AA6005448DF /* icon-light-thunderstorm.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B923AD1B335AA6005448DF /* icon-light-thunderstorm.png */; };
 		D2B923B91B335AA6005448DF /* icon-light-tornado.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B923AE1B335AA6005448DF /* icon-light-tornado.png */; };
 		D2B923BD1B337170005448DF /* nav-left-reveal.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B923BC1B337170005448DF /* nav-left-reveal.png */; };
+		D2DC635C1BAFAAE7001ADB99 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DC635B1BAFAAE7001ADB99 /* Default-568h@2x.png */; settings = {ASSET_TAGS = (); }; };
 		D2F844EB1B349C140086BB42 /* icon-black-cloudy.png in Resources */ = {isa = PBXBuildFile; fileRef = D2F844E01B349C140086BB42 /* icon-black-cloudy.png */; };
 		D2F844EC1B349C140086BB42 /* icon-black-hail.png in Resources */ = {isa = PBXBuildFile; fileRef = D2F844E11B349C140086BB42 /* icon-black-hail.png */; };
 		D2F844ED1B349C140086BB42 /* icon-black-moon.png in Resources */ = {isa = PBXBuildFile; fileRef = D2F844E21B349C140086BB42 /* icon-black-moon.png */; };
@@ -197,6 +198,7 @@
 		D2B923AD1B335AA6005448DF /* icon-light-thunderstorm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-light-thunderstorm.png"; sourceTree = "<group>"; };
 		D2B923AE1B335AA6005448DF /* icon-light-tornado.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-light-tornado.png"; sourceTree = "<group>"; };
 		D2B923BC1B337170005448DF /* nav-left-reveal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-left-reveal.png"; sourceTree = "<group>"; };
+		D2DC635B1BAFAAE7001ADB99 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D2F844E01B349C140086BB42 /* icon-black-cloudy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-black-cloudy.png"; sourceTree = "<group>"; };
 		D2F844E11B349C140086BB42 /* icon-black-hail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-black-hail.png"; sourceTree = "<group>"; };
 		D2F844E21B349C140086BB42 /* icon-black-moon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-black-moon.png"; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 		D204CB431AC3626400C149BD = {
 			isa = PBXGroup;
 			children = (
+				D2DC635B1BAFAAE7001ADB99 /* Default-568h@2x.png */,
 				D204CB4E1AC3626400C149BD /* YourDay */,
 				D204CB6B1AC3626400C149BD /* YourDayTests */,
 				D204CB4D1AC3626400C149BD /* Products */,
@@ -655,6 +658,7 @@
 				D2B9239A1B334B0D005448DF /* icon-dark-hail.png in Resources */,
 				D2F844F11B349C140086BB42 /* icon-black-snowfall.png in Resources */,
 				D2B923B51B335AA6005448DF /* icon-light-snowfall.png in Resources */,
+				D2DC635C1BAFAAE7001ADB99 /* Default-568h@2x.png in Resources */,
 				D2A7AC951B4108180050BC78 /* atmosphere_blues.png in Resources */,
 				D2F844EC1B349C140086BB42 /* icon-black-hail.png in Resources */,
 				D2F844F51B349C140086BB42 /* icon-black-tornado.png in Resources */,
@@ -854,6 +858,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YourDay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -866,6 +871,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YourDay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
